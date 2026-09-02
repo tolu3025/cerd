@@ -73,15 +73,22 @@ export const Navbar: React.FC<NavbarProps> = ({ className, onContactClick }) => 
           {/* Brand Logo & Tagline */}
           <Link
             to="/"
-            className="flex flex-col justify-center group text-left focus-visible:rounded-md"
+            className="flex items-center gap-3 group text-left focus-visible:rounded-md"
             aria-label="CERD OAU Ile-Ife Home"
           >
-            <span className="font-ui text-[18px] font-bold text-dark leading-none tracking-tight group-hover:text-cerd-blue transition-colors">
-              CERD
-            </span>
-            <span className="font-ui text-[11px] text-muted leading-tight mt-0.5 tracking-normal">
-              OAU Ile-Ife
-            </span>
+            <img
+              src="/logo.png"
+              alt="CERD Logo"
+              className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
+            />
+            <div className="flex flex-col justify-center">
+              <span className="font-ui text-[19px] font-extrabold text-dark leading-none tracking-tight group-hover:text-cerd-blue transition-colors">
+                CERD
+              </span>
+              <span className="font-ui text-[12px] text-muted font-medium leading-tight mt-0.5 tracking-normal">
+                OAU Ile-Ife
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -93,9 +100,9 @@ export const Navbar: React.FC<NavbarProps> = ({ className, onContactClick }) => 
                   key={link.href}
                   to={link.href}
                   className={cn(
-                    'font-ui text-[13px] uppercase tracking-wider font-medium transition-colors py-2 relative',
+                    'font-ui text-[14px] uppercase tracking-wider font-semibold transition-colors py-2 relative',
                     active
-                      ? 'text-cerd-blue font-semibold'
+                      ? 'text-cerd-blue font-bold'
                       : 'text-body hover:text-dark'
                   )}
                 >
@@ -103,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className, onContactClick }) => 
                   {active && (
                     <motion.div
                       layoutId="navbar-indicator"
-                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-cerd-blue rounded-full"
+                      className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-cerd-blue rounded-full"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -118,14 +125,14 @@ export const Navbar: React.FC<NavbarProps> = ({ className, onContactClick }) => 
               <button
                 type="button"
                 onClick={onContactClick}
-                className="hidden sm:inline-flex items-center justify-center font-ui text-[13px] uppercase tracking-wider font-semibold bg-cerd-blue text-white rounded-none px-6 py-2.5 hover:bg-cerd-blue-dark transition-all duration-200 shadow-button active:scale-[0.98]"
+                className="hidden sm:inline-flex items-center justify-center font-ui text-[14px] uppercase tracking-wider font-bold bg-cerd-blue text-white rounded-none px-6 py-2.5 hover:bg-cerd-blue-dark transition-all duration-200 shadow-button active:scale-[0.98]"
               >
                 <span>CONTACT US</span>
               </button>
             ) : (
               <Link
                 to="/contact-us"
-                className="hidden sm:inline-flex items-center justify-center font-ui text-[13px] uppercase tracking-wider font-semibold bg-cerd-blue text-white rounded-none px-6 py-2.5 hover:bg-cerd-blue-dark transition-all duration-200 shadow-button active:scale-[0.98]"
+                className="hidden sm:inline-flex items-center justify-center font-ui text-[14px] uppercase tracking-wider font-bold bg-cerd-blue text-white rounded-none px-6 py-2.5 hover:bg-cerd-blue-dark transition-all duration-200 shadow-button active:scale-[0.98]"
               >
                 <span>CONTACT US</span>
               </Link>
@@ -171,9 +178,12 @@ export const Navbar: React.FC<NavbarProps> = ({ className, onContactClick }) => 
               {/* Drawer Header */}
               <div>
                 <div className="flex items-center justify-between pb-5 border-b border-black/10">
-                  <div className="flex flex-col">
-                    <span className="font-ui text-[18px] font-bold text-dark">CERD</span>
-                    <span className="font-ui text-[11px] text-muted">OAU Ile-Ife</span>
+                  <div className="flex items-center gap-3">
+                    <img src="/logo.png" alt="CERD Logo" className="h-9 w-auto object-contain" />
+                    <div className="flex flex-col">
+                      <span className="font-ui text-[19px] font-extrabold text-dark leading-none">CERD</span>
+                      <span className="font-ui text-[12px] text-muted font-medium">OAU Ile-Ife</span>
+                    </div>
                   </div>
                   <button
                     type="button"

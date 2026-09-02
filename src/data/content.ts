@@ -904,134 +904,155 @@ export interface StaffContent {
 export const STAFF_CONTENT: StaffContent = {
   hero: {
     badge: 'ACADEMIC & TECHNICAL FACULTY',
-    heading: 'Distinguished Scientists, Engineers & Fellows',
+    heading: 'Distinguished Scientists, Engineers & Staff',
     subheading:
-      'Meet the multidisciplinary team of professors, research fellows, and technical specialists driving atomic science and energy innovation at CERD.',
+      'Meet the multidisciplinary team of directors, research professors, scientists, energy engineers, and technical personnel powering research excellence at CERD.',
   },
   director: {
-    name: 'Prof. J. A. Ajao',
-    role: 'Director, CERD',
-    qualifications: 'B.Sc., M.Sc., Ph.D. (Physics), FNIP',
+    name: 'Prof. Abiodun Suleiman Momodu',
+    role: 'Research Professor & Director',
+    qualifications: 'B.Sc., M.Sc., Ph.D.',
     specialization:
-      'Solid State Physics, Ion Beam Analysis, Materials Characterization',
-    email: 'jajao@cerd.oau.edu.ng',
+      'Energy Economics, Environmental & Energy Policy, Technology Management & Energy Systems Modeling',
+    email: 'amomodu@cerd.oau.edu.ng',
     message:
-      'Welcome to the Centre for Energy Research and Development. Our dedicated researchers and technical staff work tirelessly to address national energy security through empirical physics, environmental radiometry, and clean technologies.',
+      'Welcome to the Centre for Energy Research and Development (CERD), Obafemi Awolowo University. Our dedicated team of research professors, scientists, engineers, and technical services staff work collaboratively to champion innovative energy solutions and nuclear science research for national development.',
   },
   divisions: [
     {
-      divisionName: 'Nuclear Science & Technology Division',
+      divisionName: 'Environmental & Earth Science',
       staff: [
         {
-          name: 'Prof. F. S. Olise',
-          role: 'Research Professor & Division Coordinator',
-          qualifications: 'B.Sc., M.Sc., Ph.D. (Nuclear Physics)',
-          specialization:
-            'Ion Beam Analysis (PIXE/PIGE), Atmospheric Aerosol Physics',
-          email: 'folise@cerd.oau.edu.ng',
-        },
-        {
-          name: 'Prof. A. S. Fasunwon',
-          role: 'Senior Research Fellow',
-          qualifications: 'B.Sc., M.Sc., Ph.D. (Health Physics)',
-          specialization:
-            'Radiation Dosimetry, Environmental Radioactivity, TLD Systems',
-          email: 'afasunwon@cerd.oau.edu.ng',
-        },
-        {
-          name: 'Dr. H. A. Balogun',
-          role: 'Senior Research Fellow & Accelerator Engineer',
-          qualifications: 'B.Eng., M.Sc., Ph.D. (Nuclear Engineering)',
-          specialization:
-            'Pelletron Accelerator Maintenance, Beamline Diagnostics, NAA',
-          email: 'hbalogun@cerd.oau.edu.ng',
-        },
-      ],
-    },
-    {
-      divisionName: 'Materials & Electronics Division',
-      staff: [
-        {
-          name: 'Dr. O. E. Alao',
-          role: 'Senior Research Fellow & Division Coordinator',
-          qualifications: 'B.Sc., M.Sc., Ph.D. (Materials Science)',
-          specialization:
-            'Thin Film Synthesis, Magnetron Sputtering, Nanostructured Oxides',
-          email: 'oalao@cerd.oau.edu.ng',
-        },
-        {
-          name: 'Prof. G. A. Osinkolu',
-          role: 'Research Professor',
-          qualifications: 'B.Sc., M.Sc., Ph.D. (Metallurgy & Materials)',
-          specialization:
-            'Radiation Damage in Metals, Electron Microscopy, Phase Transitions',
-          email: 'gosinkolu@cerd.oau.edu.ng',
-        },
-        {
-          name: 'Dr. M. A. Eleruja',
-          role: 'Senior Research Fellow',
-          qualifications: 'B.Sc., M.Sc., Ph.D. (Solid State Electronics)',
-          specialization:
-            'Semiconductor Devices, Optoelectronics, CVD Thin Films',
-          email: 'meleruja@cerd.oau.edu.ng',
-        },
-      ],
-    },
-    {
-      divisionName: 'Energy Management Division',
-      staff: [
-        {
-          name: 'Engr. Dr. K. M. Ogundele',
-          role: 'Senior Research Fellow & Division Coordinator',
-          qualifications: 'B.Sc., M.Sc., Ph.D. (Mechanical/Energy Engineering)',
-          specialization:
-            'Solar Photovoltaic/Thermal Systems, Microgrid Integration',
-          email: 'kogundele@cerd.oau.edu.ng',
-        },
-        {
-          name: 'Dr. A. O. Ojo',
-          role: 'Research Fellow',
-          qualifications: 'B.Sc., M.Sc., Ph.D. (Renewable Energy Physics)',
-          specialization:
-            'Biomass Gasification, Pyrolysis Systems, Bio-Char Applications',
-          email: 'aojo@cerd.oau.edu.ng',
-        },
-        {
-          name: 'Engr. T. A. Adediran',
-          role: 'Principal Engineer',
-          qualifications: 'B.Eng., M.Eng. (Electrical/Power Systems)',
-          specialization:
-            'Smart Grid Optimization, Inverter Systems, Energy Auditing',
-          email: 'tadediran@cerd.oau.edu.ng',
-        },
-      ],
-    },
-    {
-      divisionName: 'Environmental Science Division',
-      staff: [
-        {
-          name: 'Dr. (Mrs.) B. T. Adeleke',
-          role: 'Senior Research Fellow & Division Coordinator',
+          name: 'Dr. Katherine Temitope (K.T.) Ogundele',
+          role: 'Senior Research Fellow & Division Head',
           qualifications: 'B.Sc., M.Sc., Ph.D. (Environmental Radiochemistry)',
           specialization:
-            'NORM Surveillance, Trace Heavy Metal Speciation, Water Quality',
-          email: 'badeleke@cerd.oau.edu.ng',
+            'Naturally Occurring Radioactive Materials (NORM), Environmental Radiochemistry, Heavy Metal Analysis & Water Quality Surveillance',
+          email: 'ktogundele@cerd.oau.edu.ng',
         },
         {
-          name: 'Prof. O. O. Fasunwon',
+          name: 'Prof. Oladotun Wasiu (W.O.) Makinde',
           role: 'Research Professor',
           qualifications: 'B.Sc., M.Sc., Ph.D. (Applied Geophysics)',
           specialization:
-            'Seismotectonics, Crustal Dynamics, Radon Emanation Modeling',
-          email: 'oofasunwon@cerd.oau.edu.ng',
+            'Applied Geophysics, Seismotectonics, Crustal Dynamics & Soil Radon Emanation Monitoring',
+          email: 'wmakinde@cerd.oau.edu.ng',
         },
         {
-          name: 'Dr. J. O. Olowookere',
-          role: 'Research Fellow',
+          name: 'Dr. Ayodeji Adekunle Eluyemi (A.A. Eluyemi)',
+          role: 'Senior Research Fellow',
           qualifications: 'B.Sc., M.Sc., Ph.D. (Radiation Biophysics)',
           specialization:
-            'Biological Dosimetry, Cytogenetic Assays, ICP-MS Elemental Assays',
-          email: 'jolowookere@cerd.oau.edu.ng',
+            'Radiation Biophysics, Environmental Radioactivity Monitoring & Trace Elemental Assays',
+          email: 'aeluyemi@cerd.oau.edu.ng',
+        },
+      ],
+    },
+    {
+      divisionName: 'Energy Management & Technology',
+      staff: [
+        {
+          name: 'Prof. William Siyanbola',
+          role: 'Research Professor & Division Head',
+          qualifications: 'B.Sc., M.Sc., Ph.D. (Energy Systems & Policy)',
+          specialization:
+            'Energy Technology Planning, Solar Photovoltaic/Thermal Systems & National Energy Policy',
+          email: 'wsiyanbola@cerd.oau.edu.ng',
+        },
+        {
+          name: 'Prof. John-Felix Kayode (J.F.K.) Akinbami',
+          role: 'Research Professor',
+          qualifications: 'B.Sc., M.Sc., Ph.D. (Energy Economics)',
+          specialization:
+            'Energy Systems Economics, Biomass Gasification, Pyrolysis Systems & Climate Mitigation Strategy',
+          email: 'jakinbami@cerd.oau.edu.ng',
+        },
+      ],
+    },
+    {
+      divisionName: 'Applied Nuclear Science & Technology',
+      staff: [
+        {
+          name: 'Dr. Mouftahou B. Latif (M.B. Latif)',
+          role: 'Senior Research Fellow & Accelerator Physicist',
+          qualifications: 'B.Sc., M.Sc., Ph.D. (Nuclear Physics)',
+          specialization:
+            'Pelletron Tandem Accelerator Operations, Ion Beam Analysis (PIXE/PIGE) & Nuclear Spectroscopy',
+          email: 'mlatif@cerd.oau.edu.ng',
+        },
+        {
+          name: 'Dr. Adebimpe Amos Amosun',
+          role: 'Senior Research Fellow',
+          qualifications: 'B.Sc., M.Sc., Ph.D. (Health Physics)',
+          specialization:
+            'Health Physics, Radiation Dosimetry & Thermoluminescent Badging (TLD Systems)',
+          email: 'aamosun@cerd.oau.edu.ng',
+        },
+        {
+          name: 'Dr. Olamitomide Gbenga Fadodun',
+          role: 'Research Fellow',
+          qualifications: 'B.Sc., M.Sc., Ph.D. (Nuclear Engineering)',
+          specialization:
+            'Neutron Activation Analysis (NAA), Reactor Physics & Isotope Applications',
+          email: 'gfadodun@cerd.oau.edu.ng',
+        },
+      ],
+    },
+    {
+      divisionName: 'Materials & Electronics',
+      staff: [
+        {
+          name: 'Prof. A.Y. Fasasi',
+          role: 'Research Professor & Division Head',
+          qualifications: 'B.Sc., M.Sc., Ph.D. (Materials Science & Physics)',
+          specialization:
+            'Materials Physics, Radiation Characterization & Advanced Thin Film Synthesis',
+          email: 'afasasi@cerd.oau.edu.ng',
+        },
+        {
+          name: 'Prof. Emmanuel Ajenifuja',
+          role: 'Research Professor',
+          qualifications: 'B.Sc., M.Sc., Ph.D. (Metallurgical Engineering)',
+          specialization:
+            'Magnetron Sputtering, Nanostructured Coatings & Radiation Damage in Alloys',
+          email: 'eajenifuja@cerd.oau.edu.ng',
+        },
+        {
+          name: 'Mr. Emmanuel Omeiza Ajoge (Ajoge E.O.)',
+          role: 'Senior Technical Officer & Electronics Specialist',
+          qualifications: 'B.Tech., M.Sc. (Electrical/Electronics)',
+          specialization:
+            'Nuclear Instrumentation, Semiconductor Testing & Multichannel Analyzer Maintenance',
+          email: 'eajoge@cerd.oau.edu.ng',
+        },
+      ],
+    },
+    {
+      divisionName: 'Maintenance & Services',
+      staff: [
+        {
+          name: 'Mr. Titilola',
+          role: 'Chief Technical Officer & Maintenance Head',
+          qualifications: 'HND, B.Sc. (Electrical & Mechanical Engineering)',
+          specialization:
+            'Facility High-Voltage Electrical Infrastructure, Grid Synchronization & Emergency Systems',
+          email: 'titilola@cerd.oau.edu.ng',
+        },
+        {
+          name: 'Mrs. Adeyeye Margret Mopelola',
+          role: 'Principal Administrative & Services Officer',
+          qualifications: 'B.A., M.Sc. (Public Administration)',
+          specialization:
+            'Administrative Logistics, Secretarial Management & Directorate Relations',
+          email: 'mmadeyeye@cerd.oau.edu.ng',
+        },
+        {
+          name: 'Mrs. Orisayomi',
+          role: 'Senior Administrative Services Officer',
+          qualifications: 'B.Sc. (Business Administration)',
+          specialization:
+            'Personnel Administration, Facility Operations & Staff Welfare Coordination',
+          email: 'orisayomi@cerd.oau.edu.ng',
         },
       ],
     },

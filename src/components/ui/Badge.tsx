@@ -1,7 +1,7 @@
 import React from 'react';
 import { cn } from '../../lib/utils';
 
-export type BadgeVariant = 'blue' | 'gray' | 'outline';
+export type BadgeVariant = 'blue' | 'cyan' | 'gray' | 'outline';
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   children: React.ReactNode;
@@ -17,6 +17,7 @@ export const Badge: React.FC<BadgeProps> = ({
 }) => {
   const variantStyles: Record<BadgeVariant, string> = {
     blue: 'bg-cerd-blue/10 text-cerd-blue',
+    cyan: 'bg-cerd-cyan/20 text-cerd-cyan border border-cerd-cyan/30',
     gray: 'bg-black/5 text-muted',
     outline: 'border border-black/10 text-body bg-transparent',
   };

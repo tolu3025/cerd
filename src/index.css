@@ -18,12 +18,18 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-size: 16.5px;
   }
 
   body {
-    @apply bg-canvas text-body font-sans antialiased;
+    @apply bg-canvas text-body font-sans antialiased text-[15.5px] leading-relaxed;
     background-color: var(--color-canvas);
     color: var(--color-body);
+  }
+
+  p {
+    font-size: 1.025rem;
+    line-height: 1.65;
   }
 
   *:focus-visible {
