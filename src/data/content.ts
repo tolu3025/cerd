@@ -1,0 +1,1138 @@
+/**
+ * Centre for Energy Research and Development (CERD)
+ * Obafemi Awolowo University (OAU), Ile-Ife, Osun State, Nigeria
+ * 
+ * Single Source of Truth for Website Content
+ */
+
+// ==========================================
+// 1. NAVIGATION LINKS
+// ==========================================
+export interface NavLink {
+  label: string;
+  href: string;
+}
+
+export const NAV_LINKS: NavLink[] = [
+  { label: 'RESEARCH', href: '/research' },
+  { label: 'PUBLICATION', href: '/publications' },
+  { label: 'FACILITIES', href: '/facilities' },
+  { label: 'STAFF', href: '/staff' },
+  { label: 'NEWS & EVENTS', href: '/news' },
+  { label: 'ABOUT US', href: '/about-us' },
+];
+
+// ==========================================
+// 2. FOOTER DATA
+// ==========================================
+export interface FooterData {
+  mission: string;
+  quickLinks: { label: string; href: string }[];
+  domains: string[];
+  contact: {
+    institution: string;
+    university: string;
+    address: string;
+    cityState: string;
+    country: string;
+    phone: string;
+    email: string;
+    copyright: string;
+  };
+}
+
+export const FOOTER_DATA: FooterData = {
+  mission:
+    'Pioneering energy research for a sustainable future. We bridge the gap between advanced nuclear science and practical renewable energy solutions for Africa and the world.',
+  quickLinks: [
+    { label: 'Home', href: '/' },
+    { label: 'About Us', href: '/about-us' },
+    { label: 'Research', href: '/research' },
+    { label: 'Publications', href: '/publications' },
+    { label: 'Facilities', href: '/facilities' },
+    { label: 'News & Events', href: '/news' },
+    { label: 'Contact Us', href: '/contact-us' },
+    { label: 'Staff Directory', href: '/staff' },
+  ],
+  domains: [
+    'Radiation Biophysics',
+    'Nuclear Science & Engineering',
+    'Renewable Energy System',
+    'Material Science',
+    'Environmental Monitoring',
+  ],
+  contact: {
+    institution: 'Centre for Energy Research and Development (CERD)',
+    university: 'Obafemi Awolowo University',
+    address: 'CERD Complex, Road 1, OAU Campus',
+    cityState: 'Ile-Ife, Osun State',
+    country: 'Nigeria',
+    phone: '+234 802 555 0199',
+    email: 'Info@cerd.oau.edu.ng',
+    copyright: '2026 CERD. All rights reserved | OAU ILE-IFE',
+  },
+};
+
+// ==========================================
+// 3. HOME CONTENT
+// ==========================================
+export interface HomeStat {
+  value: string;
+  label: string;
+  subtext: string;
+}
+
+export interface HomeDivision {
+  number: string;
+  name: string;
+  summary: string;
+  capabilities: string[];
+  href: string;
+}
+
+export interface HomeImpactPillar {
+  number: string;
+  title: string;
+  description: string;
+}
+
+export interface HomeResearchFrontier {
+  title: string;
+  category: string;
+  description: string;
+}
+
+export interface HomeNewsItem {
+  type: 'event' | 'obituary' | 'infrastructure';
+  badge: string;
+  date: string;
+  title: string;
+  summary: string;
+  href: string;
+}
+
+export interface HomeMasterclass {
+  title: string;
+  category: string;
+  summary: string;
+}
+
+export interface HomeContent {
+  hero: {
+    badge: string;
+    heading: string;
+    headingItalic: string;
+    subheading: string;
+    primaryCta: { label: string; href: string };
+    secondaryCta: { label: string; href: string };
+  };
+  overview: {
+    badge: string;
+    heading: string;
+    paragraph1: string;
+    paragraph2: string;
+    actionLabel: string;
+    actionHref: string;
+  };
+  stats: HomeStat[];
+  divisions: HomeDivision[];
+  impactPillars: HomeImpactPillar[];
+  researchFrontiers: HomeResearchFrontier[];
+  news: HomeNewsItem[];
+  masterclasses: HomeMasterclass[];
+}
+
+export const HOME_CONTENT: HomeContent = {
+  hero: {
+    badge: 'Curiosity',
+    heading: "Advancing Nigeria's",
+    headingItalic: 'Energy Future',
+    subheading:
+      'Pioneering nuclear spectroscopy and molecular analysis for a sustainable future.',
+    primaryCta: { label: 'Explore Lab', href: '/facilities' },
+    secondaryCta: { label: 'WHO WE ARE', href: '/about' },
+  },
+  overview: {
+    badge: 'WHO WE ARE',
+    heading: 'Pioneering Nuclear Science & Renewable Energy Solutions',
+    paragraph1:
+      'The Centre for Energy Research and Development (CERD) is a premier hub for cutting-edge research, training, and innovation. Since 1978, we have pioneered solutions in nuclear science, renewable energy, and materials engineering to address critical national and global challenges.',
+    paragraph2:
+      'Affiliated with the International Atomic Energy Agency (IAEA) and located at Obafemi Awolowo University (OAU), Ile-Ife, our laboratories house West Africa’s primary 1.7 MV Tandem Particle Accelerator and advanced spectrometry facilities.',
+    actionLabel: 'Our History',
+    actionHref: '/about#history',
+  },
+  stats: [
+    {
+      value: '48+',
+      label: 'Years of Excellence',
+      subtext: 'Operating continuously since establishment in 1978',
+    },
+    {
+      value: '2,000+',
+      label: 'Research Publications',
+      subtext: 'Peer-reviewed research papers and technical scientific reports',
+    },
+    {
+      value: '70+',
+      label: 'Global Partners',
+      subtext: 'Collaborating with IAEA and leading international institutions',
+    },
+    {
+      value: '#1',
+      label: 'Nuclear Research Centre',
+      subtext: 'Leading energy and nuclear research centre in West Africa',
+    },
+  ],
+  divisions: [
+    {
+      number: '01',
+      name: 'Nuclear Science & Technology',
+      summary:
+        'Pioneering peaceful nuclear application and reactor engineering.',
+      capabilities: [
+        'Reactor physics',
+        'Neutron activation analysis (NAA)',
+        'Ion beam analysis',
+        'Radioisotope radiation studies',
+      ],
+      href: '/research#nuclear-science',
+    },
+    {
+      number: '02',
+      name: 'Materials & Electronics',
+      summary:
+        'Developing next-generation materials & electronic components.',
+      capabilities: [
+        'Nanomaterials',
+        'Polymer composites',
+        'Radiation resistance testing',
+        'Thin film synthesis',
+      ],
+      href: '/research#materials-electronics',
+    },
+    {
+      number: '03',
+      name: 'Energy Management',
+      summary:
+        'Advancing clean energy solutions and atmospheric research.',
+      capabilities: [
+        'Solar photovoltaic & thermal systems',
+        'Biomass conversion',
+        'Energy storage',
+        'Microgrids',
+      ],
+      href: '/research#energy-management',
+    },
+    {
+      number: '04',
+      name: 'Environmental Science',
+      summary:
+        'Safeguarding natural resources and monitoring climate dynamics.',
+      capabilities: [
+        'Pollution assessment',
+        'Heavy metal monitoring',
+        'Seismotectonics',
+        'Geochemical resource mapping',
+      ],
+      href: '/research#environmental-science',
+    },
+  ],
+  impactPillars: [
+    {
+      number: '01',
+      title: 'Innovation & Discovery Science',
+      description:
+        'We strengthen national capacity through discovery science enabled by multidisciplinary teams and powerful research tools, translating advancements to address critical priorities.',
+    },
+    {
+      number: '02',
+      title: 'Energy Security',
+      description:
+        'We advance technologies to ensure secure, affordable, and reliable energy to fuel economic growth. Our teams develop solutions across the full energy landscape.',
+    },
+    {
+      number: '03',
+      title: 'Industrial Competitiveness',
+      description:
+        'Fostering industrial growth through high-tech material science and manufacturing innovations that give our partners a distinct global advantage.',
+    },
+    {
+      number: '04',
+      title: 'National Security & Infrastructure Resilience',
+      description:
+        'Enhancing national and reliable infrastructure security through radiation monitoring, advanced sensing, and resilient system design.',
+    },
+  ],
+  researchFrontiers: [
+    {
+      title: 'Cell Death Kinetics',
+      category: 'Biophysics',
+      description:
+        'Investigating the fundamental mechanisms of cellular decay to improve energy systems in biological contexts and radiation dosimetry.',
+    },
+    {
+      title: 'Ferroptosis Analysis',
+      category: 'Molecular Analysis',
+      description:
+        'Cutting-edge analysis of iron-dependent cell death pathways and their implications for medical energy application and nanoparticles.',
+    },
+    {
+      title: 'Bio-Energy Systems',
+      category: 'Renewable Innovation',
+      description:
+        'Harnessing biological markers, microbial conversion, and organic biomass residues for sustainable renewable energy generation.',
+    },
+    {
+      title: 'Material Science',
+      category: 'Nanotechnology',
+      description:
+        'Developing novel materials with superior thermal and radiation resistance for next-generation reactors and solar devices.',
+    },
+  ],
+  news: [
+    {
+      type: 'event',
+      badge: 'Symposium',
+      date: 'May 18, 2026',
+      title: 'CERD Organizes 50th Anniversary of Nuclear Science in Nigeria',
+      summary:
+        'CERD hosts a national symposium commemorating 50 years of peaceful nuclear science and technological research achievements in Nigeria.',
+      href: '/news/50th-anniversary-nuclear-science',
+    },
+    {
+      type: 'obituary',
+      badge: 'In Memoriam',
+      date: 'May 10, 2026',
+      title: 'CERD Mourns the Transition of Two Nuclear Scientists',
+      summary:
+        'The management and staff of CERD mourn the passing of two pioneer nuclear scientists who laid the foundation for energy research in Nigeria.',
+      href: '/news/transition-pioneer-nuclear-scientists',
+    },
+    {
+      type: 'infrastructure',
+      badge: 'Facility Upgrade',
+      date: 'April 18, 2026',
+      title: 'CERD Research and Service Wear New Look',
+      summary:
+        'The Research and Service building has been completely renovated and upgraded with modern laboratories, offices, and smart seminar halls.',
+      href: '/news/research-service-building-renovation',
+    },
+  ],
+  masterclasses: [
+    {
+      title: 'Nuclear Technology Masterclass',
+      category: 'Masterclass',
+      summary:
+        'Intensive hands-on professional certification in gamma spectrometry, radiation protection dosimetry, and reactor physics.',
+    },
+    {
+      title: 'Renewable Energy Prototype',
+      category: 'Prototype',
+      summary:
+        'Demonstration and bench testing of CERD-engineered hybrid photovoltaic-thermal (PV/T) solar collectors and modular gasification units.',
+    },
+    {
+      title: 'Environmental Impact Assessment',
+      category: 'Accredited Service',
+      summary:
+        'Comprehensive radiological, chemical, and heavy-metal ecological audits tailored for industrial, mining, and infrastructural projects.',
+    },
+    {
+      title: 'Advanced Material Testing',
+      category: 'Testing & Analysis',
+      summary:
+        'High-precision characterization of polymers, alloys, semiconductors, and ceramic barriers under extreme thermal and radiation stress.',
+    },
+  ],
+};
+
+// ==========================================
+// 4. ABOUT CONTENT
+// ==========================================
+export interface AboutContent {
+  hero: {
+    badge: string;
+    heading: string;
+    subheading: string;
+  };
+  mission: string;
+  impacts: {
+    title: string;
+    description: string;
+  }[];
+  historyTimeline: {
+    year: string;
+    title: string;
+    description: string;
+  }[];
+  directorQuote: {
+    quote: string;
+    name: string;
+    title: string;
+    institution: string;
+  };
+}
+
+export const ABOUT_CONTENT: AboutContent = {
+  hero: {
+    badge: 'ABOUT CERD',
+    heading: 'Pioneering Energy & Nuclear Excellence Since 1978',
+    subheading:
+      'Established under the National Atomic Energy Programme, CERD serves as Nigeria’s flagship centre for nuclear research, clean energy development, and high-level manpower training.',
+  },
+  mission:
+    'To conduct multidisciplinary basic and applied research in nuclear science, renewable energy technologies, and materials engineering, providing high-level technical expertise, environmental radiometry, and human capacity development for national energy security and socio-economic advancement.',
+  impacts: [
+    {
+      title: 'Discovery Science & Innovation',
+      description:
+        'Equipped with a 1.7 MV Tandem accelerator and advanced spectroscopy systems, CERD leads West Africa in ion beam analysis, non-destructive assay, and elemental trace fingerprinting.',
+    },
+    {
+      title: 'Energy Transition & Security',
+      description:
+        'Designing decentralized hybrid renewable microgrids, biomass gasification reactors, and high-efficiency solar thermal collectors to power underserved communities.',
+    },
+    {
+      title: 'Radiological Safety & Environmental Protection',
+      description:
+        'Providing nationwide environmental baseline monitoring, radon mapping, nuclear safeguards compliance, and calibration services for medical dosimetry.',
+    },
+    {
+      title: 'High-Level Human Capital Training',
+      description:
+        'Mentoring hundreds of postgraduate students, radiation safety officers, and nuclear engineers through structured masterclasses and collaborative research fellowships.',
+    },
+  ],
+  historyTimeline: [
+    {
+      year: '1978',
+      title: 'Federal Establishment at OAU Ile-Ife',
+      description:
+        'CERD was founded by the Federal Military Government of Nigeria as one of the specialized Energy Research Centres mandated to drive peaceful nuclear technology and energy research.',
+    },
+    {
+      year: '1985',
+      title: '1.7 MV Tandem Pelletron Accelerator Commissioning',
+      description:
+        'Installation of the NEC 5SDH-4 Tandem Particle Accelerator, establishing national capabilities in Proton-Induced X-ray Emission (PIXE) and Rutherford Backscattering Spectrometry (RBS).',
+    },
+    {
+      year: '1998',
+      title: 'Creation of Dedicated Renewable Energy & Materials Divisions',
+      description:
+        'Expansion of institutional mandate to incorporate solar photovoltaics, thermal systems, bio-energy gasification, and advanced functional materials.',
+    },
+    {
+      year: '2010',
+      title: 'IAEA Regional Designated Research Hub',
+      description:
+        'Designation by the International Atomic Energy Agency (IAEA) as a key regional technical partner for isotope hydrology and nuclear spectrometry in West Africa.',
+    },
+    {
+      year: '2026',
+      title: 'Golden Jubilee & Advanced Modernization',
+      description:
+        'Celebrating 50 years of peaceful atomic research, complete refurbishment of analytical laboratories, and deployment of smart instrumentation infrastructure.',
+    },
+  ],
+  directorQuote: {
+    quote:
+      'At CERD, our commitment is anchored on scientific rigor and national relevance. From probing atomic structures with our particle accelerator to engineering robust renewable microgrids, we harness energy research to transform livelihoods across Africa.',
+    name: 'Prof. J. A. Ajao',
+    title: 'Director',
+    institution: 'Centre for Energy Research and Development, OAU Ile-Ife',
+  },
+};
+
+// ==========================================
+// 5. RESEARCH CONTENT
+// ==========================================
+export interface ResearchDivisionDetail {
+  id: string;
+  number: string;
+  name: string;
+  lead: string;
+  summary: string;
+  keyAreas: string[];
+  equipment: string[];
+}
+
+export interface ResearchContent {
+  hero: {
+    badge: string;
+    heading: string;
+    subheading: string;
+  };
+  divisions: ResearchDivisionDetail[];
+  collaborateStats: {
+    value: string;
+    label: string;
+  }[];
+  flagshipProjects: {
+    title: string;
+    division: string;
+    status: string;
+    description: string;
+  }[];
+}
+
+export const RESEARCH_CONTENT: ResearchContent = {
+  hero: {
+    badge: 'RESEARCH PROGRAMMES',
+    heading: 'Scientific Frontiers in Atomic & Renewable Energy',
+    subheading:
+      'Structured across 4 specialized divisions, our multidisciplinary teams address complex energy, material, and environmental challenges through empirical investigation and international cooperation.',
+  },
+  divisions: [
+    {
+      id: 'nuclear-science',
+      number: '01',
+      name: 'Nuclear Science & Technology Division',
+      lead: 'Prof. F. S. Olise (Division Coordinator)',
+      summary:
+        'Conducts advanced basic and applied research in nuclear physics, accelerator-based atomic spectrometry, radiation biophysics, and radioisotope applications.',
+      keyAreas: [
+        'Proton-Induced X-Ray Emission (PIXE) & PIGE analysis',
+        'Neutron Activation Analysis (NAA) of minerals and biological specimens',
+        'Radiation dosimetry, shielding calculation, and medical physics',
+        'Nuclear reactor physics and non-destructive testing',
+      ],
+      equipment: [
+        '1.7 MV Tandem Pelletron Particle Accelerator',
+        'High-Purity Germanium (HPGe) Gamma-Ray Spectrometry Suite',
+        'Thermo-Luminescent Dosimetry (TLD) Reader System',
+        'Automated Alpha/Beta Counting Stations',
+      ],
+    },
+    {
+      id: 'materials-electronics',
+      number: '02',
+      name: 'Materials & Electronics Division',
+      lead: 'Dr. O. E. Alao (Division Coordinator)',
+      summary:
+        'Focuses on the synthesis, characterization, and device fabrication of advanced functional materials, semiconductors, and radiation-tolerant coatings.',
+      keyAreas: [
+        'Thin-film photovoltaics and optoelectronic materials',
+        'Radiation damage and ion-bombardment stress characterization',
+        'Nanocomposites and ceramic protective barriers',
+        'Energy storage electrodes and supercapacitors',
+      ],
+      equipment: [
+        'RF/DC Magnetron Sputtering Deposition System',
+        'Atomic Force Microscope (AFM)',
+        'X-Ray Diffractometer (XRD)',
+        'UV-Vis-NIR Spectrophotometer',
+      ],
+    },
+    {
+      id: 'energy-management',
+      number: '03',
+      name: 'Energy Management Division',
+      lead: 'Engr. Dr. K. M. Ogundele (Division Coordinator)',
+      summary:
+        'Engineers clean energy technologies, decentralized solar microgrids, biomass thermochemical conversion systems, and industrial energy auditing protocols.',
+      keyAreas: [
+        'Hybrid solar photovoltaic-thermal (PV/T) collector development',
+        'Biomass thermochemical gasification and pyrolysis',
+        'Smart microgrid stability and battery energy management',
+        'Industrial energy efficiency auditing and carbon baseline studies',
+      ],
+      equipment: [
+        'Class-A Solar Simulator & IV-Curve Tracer',
+        '50 kW Pilot Biomass Gasification Facility',
+        'Electrochemical Battery Cycle & Impedance Analyzer',
+        'Precision Meteorological & Solar Radiometric Station',
+      ],
+    },
+    {
+      id: 'environmental-science',
+      number: '04',
+      name: 'Environmental Science Division',
+      lead: 'Dr. (Mrs.) B. T. Adeleke (Division Coordinator)',
+      summary:
+        'Monitors ambient environmental radioactivity, groundwater quality, atmospheric aerosol pollution, and seismotectonic dynamics.',
+      keyAreas: [
+        'Naturally Occurring Radioactive Materials (NORM) surveillance',
+        'Heavy metal speciation in agricultural soils and aquifers',
+        'Radon monitoring in indoor and mining environments',
+        'Seismotectonics and regional geochemical mapping',
+      ],
+      equipment: [
+        'Inductively Coupled Plasma Mass Spectrometer (ICP-MS)',
+        'Continuous Radon Air Monitors & RAD7 Detectors',
+        'Broadband Digital Seismological Station',
+        'Portable Field X-Ray Fluorescence (pXRF) Analyzers',
+      ],
+    },
+  ],
+  collaborateStats: [
+    { value: '50+', label: 'Active Research Grants' },
+    { value: '15+', label: 'IAEA Technical Projects' },
+    { value: '30+', label: 'Postgraduate Fellowships' },
+    { value: '12', label: 'Patented Technology Prototypes' },
+  ],
+  flagshipProjects: [
+    {
+      title: 'National Airborne Particulate & Radon Mapping Project',
+      division: 'Environmental Science',
+      status: 'Ongoing',
+      description:
+        'Systematic nationwide baseline surveillance of atmospheric aerosols and ambient radon concentrations across major industrial zones in Nigeria.',
+    },
+    {
+      title: '1.7 MV Tandem Accelerator Modernization & Beamline Expansion',
+      division: 'Nuclear Science & Technology',
+      status: 'Completed / Operational',
+      description:
+        'Digital control upgrade and automated target chamber integration for high-throughput PIXE/RBS geological mineral assays.',
+    },
+    {
+      title: 'Agro-Industrial Biomass Gasification Microgrid Testbed',
+      division: 'Energy Management',
+      status: 'Active Field Prototype',
+      description:
+        'Deployment of a 50 kW pilot gasifier converting agricultural husks into electricity and bio-char soil amendments.',
+    },
+    {
+      title: 'Radiation-Resistant Perovskite-Silicon Tandem Solar Cells',
+      division: 'Materials & Electronics',
+      status: 'Advanced Laboratory Phase',
+      description:
+        'Development of novel passivating thin films capable of sustaining extended operational life under harsh ultraviolet and thermal stress.',
+    },
+  ],
+};
+
+// ==========================================
+// 6. PUBLICATIONS CONTENT
+// ==========================================
+export interface PublicationItem {
+  title: string;
+  journal: string;
+  authors: string;
+  year: string;
+  category: string;
+  abstract: string;
+  doi?: string;
+}
+
+export interface PublicationsContent {
+  hero: {
+    badge: string;
+    heading: string;
+    subheading: string;
+  };
+  publications: PublicationItem[];
+}
+
+export const PUBLICATIONS_CONTENT: PublicationsContent = {
+  hero: {
+    badge: 'RESEARCH REPOSITORY',
+    heading: 'Scientific Publications & Technical Dispatches',
+    subheading:
+      'Over 2,000 peer-reviewed articles published in leading international nuclear, energy, material science, and environmental journals.',
+  },
+  publications: [
+    {
+      title:
+        'Ion Beam Analysis of Atmospheric Aerosol Particulates in Southwestern Nigeria using PIXE and PIGE Spectrometry',
+      journal: 'Journal of Radioanalytical and Nuclear Chemistry',
+      authors: 'Olise, F. S., Owoade, O. K., Fasasi, M. K., & Ajao, J. A.',
+      year: '2024',
+      category: 'Nuclear Science',
+      abstract:
+        'This study investigates ambient PM2.5 and PM10 aerosol concentrations collected over an annual cycle across industrial and urban receptor sites. Using the 1.7 MV Tandem accelerator at CERD, Proton-Induced X-ray Emission (PIXE) and Proton-Induced Gamma-ray Emission (PIGE) revealed distinctive anthropogenic source profiles for lead, sulfur, and heavy crustal elements.',
+      doi: '10.1007/s10967-024-09412-1',
+    },
+    {
+      title:
+        'Assessment of Baseline Natural Radioactivity and Heavy Metal Contamination in Agricultural Soils and Groundwater Around Osun State',
+      journal: 'Environmental Monitoring and Assessment',
+      authors: 'Adeleke, B. T., Fasunwon, A. S., & Olowookere, J. O.',
+      year: '2023',
+      category: 'Environmental Science',
+      abstract:
+        'Activity concentrations of Ra-226, Th-232, and K-40 were measured across major cocoa and grain farming basins using high-resolution gamma-ray spectrometry. The calculated radium equivalent activities and hazard indices remained within international safety limits, establishing an indispensable reference baseline for regional radiological surveillance.',
+      doi: '10.1007/s10661-023-11280-4',
+    },
+    {
+      title:
+        'Synthesis and Optical Characterization of Radiation-Resistant TiO2/WO3 Nanocomposite Thin Films for Nuclear Shielding Applications',
+      journal: 'Radiation Physics and Chemistry',
+      authors: 'Alao, O. E., Osinkolu, G. A., & Eleruja, M. A.',
+      year: '2023',
+      category: 'Material Science',
+      abstract:
+        'Nanostructured TiO2/WO3 composite thin films were deposited on quartz substrates via RF magnetron sputtering and subjected to high-dose gamma irradiation. Structural XRD analysis and spectrophotometry demonstrated remarkable structural stability, negligible bandgap shifting, and enhanced attenuation factors suitable for optoelectronic protective windows in radiation environments.',
+      doi: '10.1016/j.radphyschem.2023.110945',
+    },
+    {
+      title:
+        'Performance Evaluation of a Pilot Hybrid Photovoltaic-Thermal (PV/T) Solar System under Sub-Saharan Tropical Conditions',
+      journal: 'Renewable Energy',
+      authors: 'Ogundele, K. M., Ojo, A. O., & Adediran, T. A.',
+      year: '2022',
+      category: 'Energy Management',
+      abstract:
+        'A comprehensive experimental investigation of an actively cooled PV/T collector operated under tropical irradiance at OAU Ile-Ife. The integration of dual-fluid heat extraction yielded an electrical efficiency enhancement of 14.8% alongside a combined thermal-electrical total efficiency exceeding 68.2%.',
+      doi: '10.1016/j.renene.2022.06.088',
+    },
+    {
+      title:
+        'Neutron Activation Analysis (NAA) Determination of Trace Elemental Signatures in Nigerian Geological Mineral Deposits',
+      journal: 'Applied Radiation and Isotopes',
+      authors: 'Balogun, H. A., Fasunwon, O. O., & Olise, F. S.',
+      year: '2024',
+      category: 'Nuclear Science',
+      abstract:
+        'Multi-elemental instrumental neutron activation analysis was applied to quantify rare earth elements (REEs), tantalum, and niobium in pegmatite ore specimens. Precision evaluations confirmed sub-ppm detection limits, providing critical geochemical signatures for national mineral exploration.',
+      doi: '10.1016/j.apradiso.2024.111204',
+    },
+    {
+      title:
+        'Radiation Biophysics and Cell Death Kinetics Following Controlled Gamma Dosimetry Protocols',
+      journal: 'Radiation and Environmental Biophysics',
+      authors: 'Fasunwon, A. S., Adeleke, B. T., & Ajao, J. A.',
+      year: '2023',
+      category: 'Biophysics',
+      abstract:
+        'Investigating the kinetics of iron-dependent lipid peroxidation (ferroptosis) and apoptotic cell death pathways under fractional radiation doses. The experimental findings provide mathematical models for cellular radiation response curves applicable in clinical radiotherapy calibration.',
+      doi: '10.1007/s00411-023-01032-9',
+    },
+  ],
+};
+
+// ==========================================
+// 7. FACILITIES CONTENT
+// ==========================================
+export interface FacilityItem {
+  name: string;
+  tag: string;
+  description: string;
+  capabilities: string[];
+}
+
+export interface FacilitiesContent {
+  hero: {
+    badge: string;
+    heading: string;
+    subheading: string;
+  };
+  facilities: FacilityItem[];
+}
+
+export const FACILITIES_CONTENT: FacilitiesContent = {
+  hero: {
+    badge: 'LABORATORY INFRASTRUCTURE',
+    heading: 'World-Class Analytical Laboratories & Accelerators',
+    subheading:
+      'Housing Nigeria’s premier ion-beam particle accelerator and certified analytical spectroscopy suites available for academic research and industrial testing.',
+  },
+  facilities: [
+    {
+      name: '1.7 MV Tandem Pelletron Particle Accelerator Complex',
+      tag: 'Core Nuclear Facility',
+      description:
+        'The National Electrostatics Corporation (NEC 5SDH-4) 1.7 MV Tandem accelerator delivers proton and alpha ion beams for non-destructive, sub-ppm multi-elemental analysis and material depth profiling.',
+      capabilities: [
+        'Proton-Induced X-Ray Emission (PIXE)',
+        'Proton-Induced Gamma-Ray Emission (PIGE)',
+        'Rutherford Backscattering Spectrometry (RBS)',
+        'Nuclear Reaction Analysis (NRA)',
+        'Ion Implantation and Radiation Damage Simulation',
+      ],
+    },
+    {
+      name: 'High-Purity Germanium (HPGe) Gamma Spectrometry Laboratory',
+      tag: 'Radiological Assay',
+      description:
+        'Equipped with low-background lead-shielded coaxial HPGe detector systems and digital multichannel analyzers for high-precision radiometric assays.',
+      capabilities: [
+        'Natural Radioactivity (Ra-226, Th-232, K-40) Measurement',
+        'Instrumental Neutron Activation Analysis (INAA)',
+        'Environmental Soil, Water, and Food Radioactivity Testing',
+        'Naturally Occurring Radioactive Material (NORM) Clearance',
+      ],
+    },
+    {
+      name: 'Advanced Materials Synthesis & Thin Films Laboratory',
+      tag: 'Nanomaterials',
+      description:
+        'A dedicated cleanroom environment for the fabrication and characterization of nanostructured films, semiconductor oxides, and functional solar coatings.',
+      capabilities: [
+        'RF & DC Magnetron Sputtering Deposition',
+        'Atomic Force Microscopy (AFM) Surface Topography',
+        'X-Ray Diffraction (XRD) Phase Identification',
+        'UV-Vis-NIR Spectrophotometry and Optical Bandgap Analysis',
+      ],
+    },
+    {
+      name: 'Solar & Renewable Energy Testing Ground',
+      tag: 'Clean Tech',
+      description:
+        'A pilot demonstration yard for testing solar photovoltaic modules, hybrid PV/T collectors, biomass gasification reactors, and microgrid converters under real sub-Saharan weather conditions.',
+      capabilities: [
+        'Class-A Solar Simulator & IV Performance Curve Tracing',
+        '50 kW Pilot Biomass Gasifier and Syngas Analyzer',
+        'Automated Solar Irradiance and Meteorological Logging',
+        'Battery Storage Cycle Life and Inverter Load Testing',
+      ],
+    },
+    {
+      name: 'Environmental Spectrometry & ICP-MS Laboratory',
+      tag: 'Environmental Monitoring',
+      description:
+        'Accredited chemical and trace-metal testing suite providing high-throughput elemental analysis for mining, industrial effluent, and groundwater safety.',
+      capabilities: [
+        'Inductively Coupled Plasma Mass Spectrometry (ICP-MS)',
+        'Continuous Indoor & Soil Radon Monitoring (RAD7)',
+        'Atomic Absorption Spectrometry (AAS)',
+        'Water Quality Parameter and Heavy Metal Speciation',
+      ],
+    },
+    {
+      name: 'Thermoluminescent Dosimetry (TLD) & Radiation Protection Unit',
+      tag: 'Occupational Safety',
+      description:
+        'Provides statutory personal radiation dosimetry monitoring, calibration, and safety compliance audits for radiation workers in medicine and industry.',
+      capabilities: [
+        'Harshaw TLD Reader Badge Processing',
+        'Radiation Survey Meter Calibration',
+        'Facility Shielding Assessment and Dose Modeling',
+        'Statutory Radiation Safety Officer (RSO) Certification',
+      ],
+    },
+  ],
+};
+
+// ==========================================
+// 8. NEWS CONTENT
+// ==========================================
+export interface NewsArticleItem {
+  id: string;
+  title: string;
+  date: string;
+  category: string;
+  summary: string;
+  content: string;
+  location?: string;
+}
+
+export interface NewsContent {
+  hero: {
+    badge: string;
+    heading: string;
+    subheading: string;
+  };
+  articles: NewsArticleItem[];
+}
+
+export const NEWS_CONTENT: NewsContent = {
+  hero: {
+    badge: 'NEWS & DISPATCHES',
+    heading: 'Institutional News, Events & Announcements',
+    subheading:
+      'Stay informed on scientific symposia, research breakthroughs, infrastructure upgrades, and academic milestones from CERD.',
+  },
+  articles: [
+    {
+      id: '50th-anniversary-nuclear-science',
+      title: 'CERD Organizes 50th Anniversary of Nuclear Science in Nigeria',
+      date: 'May 18, 2026',
+      category: 'Symposium',
+      summary:
+        'CERD hosts a national symposium commemorating 50 years of peaceful nuclear science and technological research achievements in Nigeria.',
+      content:
+        'The Centre for Energy Research and Development (CERD) at Obafemi Awolowo University is proud to announce the International Golden Jubilee Symposium celebrating 50 Years of Nuclear Science and Energy Research in Nigeria.\n\nThe three-day landmark event brings together distinguished delegates from the International Atomic Energy Agency (IAEA), the Nigerian Nuclear Regulatory Authority (NNRA), leading university research centres, and energy policy makers. Keynote addresses will reflect on Nigeria’s peaceful atomic energy milestones and unveil the 2030–2050 Nuclear Technology Strategic Roadmap.',
+      location: 'CERD International Conference Hall, OAU Ile-Ife',
+    },
+    {
+      id: 'transition-pioneer-nuclear-scientists',
+      title: 'CERD Mourns the Transition of Two Nuclear Scientists',
+      date: 'May 10, 2026',
+      category: 'In Memoriam',
+      summary:
+        'The management and staff of CERD mourn the passing of two pioneer nuclear scientists who laid the foundation for energy research in Nigeria.',
+      content:
+        'It is with deep sorrow and profound gratitude that the Centre for Energy Research and Development announces the transition of two of its founding research fellows and visionary nuclear physicists.\n\nTheir seminal contributions in the late 1970s and 1980s led to the installation of Nigeria’s first ion-beam accelerator facility and trained two generations of nuclear engineers. A special memorial colloquium and honor book will be opened at the CERD Administrative Foyer.',
+      location: 'CERD Administrative Foyer, OAU Ile-Ife',
+    },
+    {
+      id: 'research-service-building-renovation',
+      title: 'CERD Research and Service Wear New Look',
+      date: 'April 18, 2026',
+      category: 'Facility Upgrade',
+      summary:
+        'The Research and Service building has been completely renovated and upgraded with modern laboratories, offices, and smart seminar halls.',
+      content:
+        'In line with CERD’s ongoing modernization agenda, the premier Research and Service Complex has undergone a comprehensive state-of-the-art renovation.\n\nThe upgraded facility features climate-controlled ultra-clean spectrometry rooms, enhanced electromagnetic shielding for analytical instruments, solar-hybrid emergency power systems, and fully digital collaborative seminar spaces for visiting international scholars.',
+      location: 'CERD Research & Service Complex, OAU Ile-Ife',
+    },
+  ],
+};
+
+// ==========================================
+// 9. STAFF CONTENT
+// ==========================================
+export interface StaffMember {
+  name: string;
+  role: string;
+  qualifications: string;
+  specialization: string;
+  email: string;
+}
+
+export interface StaffDivisionGroup {
+  divisionName: string;
+  staff: StaffMember[];
+}
+
+export interface StaffContent {
+  hero: {
+    badge: string;
+    heading: string;
+    subheading: string;
+  };
+  director: StaffMember & {
+    message: string;
+  };
+  divisions: StaffDivisionGroup[];
+}
+
+export const STAFF_CONTENT: StaffContent = {
+  hero: {
+    badge: 'ACADEMIC & TECHNICAL FACULTY',
+    heading: 'Distinguished Scientists, Engineers & Fellows',
+    subheading:
+      'Meet the multidisciplinary team of professors, research fellows, and technical specialists driving atomic science and energy innovation at CERD.',
+  },
+  director: {
+    name: 'Prof. J. A. Ajao',
+    role: 'Director, CERD',
+    qualifications: 'B.Sc., M.Sc., Ph.D. (Physics), FNIP',
+    specialization:
+      'Solid State Physics, Ion Beam Analysis, Materials Characterization',
+    email: 'jajao@cerd.oau.edu.ng',
+    message:
+      'Welcome to the Centre for Energy Research and Development. Our dedicated researchers and technical staff work tirelessly to address national energy security through empirical physics, environmental radiometry, and clean technologies.',
+  },
+  divisions: [
+    {
+      divisionName: 'Nuclear Science & Technology Division',
+      staff: [
+        {
+          name: 'Prof. F. S. Olise',
+          role: 'Research Professor & Division Coordinator',
+          qualifications: 'B.Sc., M.Sc., Ph.D. (Nuclear Physics)',
+          specialization:
+            'Ion Beam Analysis (PIXE/PIGE), Atmospheric Aerosol Physics',
+          email: 'folise@cerd.oau.edu.ng',
+        },
+        {
+          name: 'Prof. A. S. Fasunwon',
+          role: 'Senior Research Fellow',
+          qualifications: 'B.Sc., M.Sc., Ph.D. (Health Physics)',
+          specialization:
+            'Radiation Dosimetry, Environmental Radioactivity, TLD Systems',
+          email: 'afasunwon@cerd.oau.edu.ng',
+        },
+        {
+          name: 'Dr. H. A. Balogun',
+          role: 'Senior Research Fellow & Accelerator Engineer',
+          qualifications: 'B.Eng., M.Sc., Ph.D. (Nuclear Engineering)',
+          specialization:
+            'Pelletron Accelerator Maintenance, Beamline Diagnostics, NAA',
+          email: 'hbalogun@cerd.oau.edu.ng',
+        },
+      ],
+    },
+    {
+      divisionName: 'Materials & Electronics Division',
+      staff: [
+        {
+          name: 'Dr. O. E. Alao',
+          role: 'Senior Research Fellow & Division Coordinator',
+          qualifications: 'B.Sc., M.Sc., Ph.D. (Materials Science)',
+          specialization:
+            'Thin Film Synthesis, Magnetron Sputtering, Nanostructured Oxides',
+          email: 'oalao@cerd.oau.edu.ng',
+        },
+        {
+          name: 'Prof. G. A. Osinkolu',
+          role: 'Research Professor',
+          qualifications: 'B.Sc., M.Sc., Ph.D. (Metallurgy & Materials)',
+          specialization:
+            'Radiation Damage in Metals, Electron Microscopy, Phase Transitions',
+          email: 'gosinkolu@cerd.oau.edu.ng',
+        },
+        {
+          name: 'Dr. M. A. Eleruja',
+          role: 'Senior Research Fellow',
+          qualifications: 'B.Sc., M.Sc., Ph.D. (Solid State Electronics)',
+          specialization:
+            'Semiconductor Devices, Optoelectronics, CVD Thin Films',
+          email: 'meleruja@cerd.oau.edu.ng',
+        },
+      ],
+    },
+    {
+      divisionName: 'Energy Management Division',
+      staff: [
+        {
+          name: 'Engr. Dr. K. M. Ogundele',
+          role: 'Senior Research Fellow & Division Coordinator',
+          qualifications: 'B.Sc., M.Sc., Ph.D. (Mechanical/Energy Engineering)',
+          specialization:
+            'Solar Photovoltaic/Thermal Systems, Microgrid Integration',
+          email: 'kogundele@cerd.oau.edu.ng',
+        },
+        {
+          name: 'Dr. A. O. Ojo',
+          role: 'Research Fellow',
+          qualifications: 'B.Sc., M.Sc., Ph.D. (Renewable Energy Physics)',
+          specialization:
+            'Biomass Gasification, Pyrolysis Systems, Bio-Char Applications',
+          email: 'aojo@cerd.oau.edu.ng',
+        },
+        {
+          name: 'Engr. T. A. Adediran',
+          role: 'Principal Engineer',
+          qualifications: 'B.Eng., M.Eng. (Electrical/Power Systems)',
+          specialization:
+            'Smart Grid Optimization, Inverter Systems, Energy Auditing',
+          email: 'tadediran@cerd.oau.edu.ng',
+        },
+      ],
+    },
+    {
+      divisionName: 'Environmental Science Division',
+      staff: [
+        {
+          name: 'Dr. (Mrs.) B. T. Adeleke',
+          role: 'Senior Research Fellow & Division Coordinator',
+          qualifications: 'B.Sc., M.Sc., Ph.D. (Environmental Radiochemistry)',
+          specialization:
+            'NORM Surveillance, Trace Heavy Metal Speciation, Water Quality',
+          email: 'badeleke@cerd.oau.edu.ng',
+        },
+        {
+          name: 'Prof. O. O. Fasunwon',
+          role: 'Research Professor',
+          qualifications: 'B.Sc., M.Sc., Ph.D. (Applied Geophysics)',
+          specialization:
+            'Seismotectonics, Crustal Dynamics, Radon Emanation Modeling',
+          email: 'oofasunwon@cerd.oau.edu.ng',
+        },
+        {
+          name: 'Dr. J. O. Olowookere',
+          role: 'Research Fellow',
+          qualifications: 'B.Sc., M.Sc., Ph.D. (Radiation Biophysics)',
+          specialization:
+            'Biological Dosimetry, Cytogenetic Assays, ICP-MS Elemental Assays',
+          email: 'jolowookere@cerd.oau.edu.ng',
+        },
+      ],
+    },
+  ],
+};
+
+// ==========================================
+// 10. CONTACT CONTENT
+// ==========================================
+export interface ContactFormField {
+  id: string;
+  label: string;
+  type: 'text' | 'email' | 'select' | 'textarea';
+  placeholder: string;
+  required: boolean;
+  options?: string[];
+}
+
+export interface ContactContent {
+  hero: {
+    badge: string;
+    heading: string;
+    subheading: string;
+  };
+  contactInfo: {
+    addressLines: string[];
+    phone: string;
+    email: string;
+    workingHours: string;
+    locationNote: string;
+  };
+  formFields: ContactFormField[];
+}
+
+export const CONTACT_CONTENT: ContactContent = {
+  hero: {
+    badge: 'GET IN TOUCH',
+    heading: 'Contact CERD Directorate & Laboratories',
+    subheading:
+      'Connect with research coordinators, schedule laboratory testing services, or inquire about masterclass certifications and academic collaborations.',
+  },
+  contactInfo: {
+    addressLines: [
+      'Centre for Energy Research and Development (CERD)',
+      'Obafemi Awolowo University (OAU)',
+      'Road 1, OAU Main Campus',
+      'Ile-Ife, Osun State, Nigeria',
+    ],
+    phone: '+234 802 555 0199',
+    email: 'Info@cerd.oau.edu.ng',
+    workingHours: 'Monday – Friday: 8:00 AM – 5:00 PM (WAT)',
+    locationNote:
+      'Located within the academic research sector of Obafemi Awolowo University, accessible via the main university gate on Ife-Ibadan Expressway.',
+  },
+  formFields: [
+    {
+      id: 'fullName',
+      label: 'Full Name',
+      type: 'text',
+      placeholder: 'e.g. Dr. Jane Doe',
+      required: true,
+    },
+    {
+      id: 'email',
+      label: 'Email Address',
+      type: 'email',
+      placeholder: 'name@institution.edu.ng',
+      required: true,
+    },
+    {
+      id: 'organization',
+      label: 'Organization / Institution',
+      type: 'text',
+      placeholder: 'e.g. University of Lagos / Energy Commission',
+      required: false,
+    },
+    {
+      id: 'department',
+      label: 'Target Division / Inquiry Type',
+      type: 'select',
+      placeholder: 'Select department',
+      required: true,
+      options: [
+        'General Directorate Inquiries',
+        'Nuclear Science & Technology Division',
+        'Materials & Electronics Division',
+        'Energy Management Division',
+        'Environmental Science Division',
+        'Tandem Accelerator Analytical Testing (PIXE/RBS)',
+        'Gamma Spectrometry & NAA Testing',
+        'TLD Radiation Dosimetry Badges',
+        'Masterclass Registration & Academic Training',
+      ],
+    },
+    {
+      id: 'message',
+      label: 'Inquiry Details / Scope of Research',
+      type: 'textarea',
+      placeholder:
+        'Please provide details regarding your research proposal, analytical service specifications, or question...',
+      required: true,
+    },
+  ],
+};
