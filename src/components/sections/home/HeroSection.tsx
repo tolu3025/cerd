@@ -13,23 +13,10 @@ export const HeroSection: React.FC = () => {
   return (
     <section className="relative bg-dark min-h-[85vh] flex items-center pt-24 pb-16 md:py-24 overflow-hidden">
       <div className="max-w-[1240px] mx-auto w-full px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
           
-          {/* Left Column (Desktop): Hero Plant Image (Hidden on Mobile) */}
-          <div className="hidden lg:block lg:col-span-6 lg:order-1 w-full">
-            <FadeIn delay={0.2} direction="right" className="w-full">
-              <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] overflow-hidden border border-white/15 shadow-2xl group rounded-none">
-                <img
-                  src={heroPlantImg}
-                  alt="Centre for Energy Research and Development Plant"
-                  className="w-full h-full object-cover rounded-none transform transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-            </FadeIn>
-          </div>
-
-          {/* Right Column (Desktop): Headline & Action CTAs */}
-          <div className="lg:col-span-6 lg:order-2 flex flex-col items-start">
+          {/* Left Column (Desktop & Mobile): Headline & Action CTAs */}
+          <div className="lg:col-span-6 flex flex-col justify-center items-start">
             <h1 className="font-serif text-white text-4xl sm:text-5xl md:text-6xl lg:text-[60px] font-medium leading-[1.08] tracking-tight mb-6">
               <AnimatedText text={hero.heading} as="span" />{' '}
               <span className="italic text-cerd-cyan font-normal inline-block">
@@ -57,11 +44,25 @@ export const HeroSection: React.FC = () => {
             </FadeIn>
           </div>
 
+          {/* Right Column (Desktop): Hero Plant Image Covering Full Occupied Space (Hidden on Mobile) */}
+          <div className="hidden lg:flex lg:col-span-6 w-full items-stretch">
+            <FadeIn delay={0.2} direction="left" className="w-full h-full flex">
+              <div className="relative w-full h-full min-h-[440px] overflow-hidden border border-white/15 shadow-2xl group rounded-none">
+                <img
+                  src={heroPlantImg}
+                  alt="Centre for Energy Research and Development Plant"
+                  className="w-full h-full object-cover rounded-none transform transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+            </FadeIn>
+          </div>
+
         </div>
       </div>
     </section>
   );
 };
+
 
 
 
