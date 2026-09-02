@@ -25,7 +25,7 @@ export const GradientButton: React.FC<GradientButtonProps> = ({
 }) => {
   const baseClasses = cn(
     'inline-flex items-center justify-center gap-2',
-    'bg-cerd-blue text-white rounded-xl px-6 py-3',
+    'bg-cerd-blue text-white rounded-none px-6 py-3',
     'font-ui font-medium text-sm uppercase tracking-wider',
     'hover:bg-cerd-blue-dark hover:shadow-button active:scale-[0.98]',
     'transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed',

@@ -119,7 +119,7 @@ export const DirectorProfile: React.FC = () => {
                 <div className="mt-8 pt-5 border-t border-black/5 flex items-center gap-3">
                   <a
                     href="mailto:amomodu@cerd.oau.edu.ng"
-                    className="inline-flex items-center gap-2 bg-cerd-blue text-white font-ui text-xs font-semibold uppercase tracking-wider px-5 py-2.5 rounded-xl hover:bg-cerd-blue-dark transition-colors shadow-button"
+                    className="inline-flex items-center gap-2 bg-cerd-blue text-white font-ui text-xs font-semibold uppercase tracking-wider px-5 py-2.5 rounded-none hover:bg-cerd-blue-dark transition-colors shadow-button"
                   >
                     <Mail size={14} />
                     <span>Contact Directorate</span>

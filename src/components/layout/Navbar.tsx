@@ -118,14 +118,14 @@ export const Navbar: React.FC<NavbarProps> = ({ className, onContactClick }) => 
               <button
                 type="button"
                 onClick={onContactClick}
-                className="hidden sm:inline-flex items-center justify-center font-ui text-[13px] uppercase tracking-wider font-semibold bg-cerd-blue text-white rounded-xl px-6 py-2.5 hover:bg-cerd-blue-dark transition-all duration-200 shadow-button active:scale-[0.98]"
+                className="hidden sm:inline-flex items-center justify-center font-ui text-[13px] uppercase tracking-wider font-semibold bg-cerd-blue text-white rounded-none px-6 py-2.5 hover:bg-cerd-blue-dark transition-all duration-200 shadow-button active:scale-[0.98]"
               >
                 <span>CONTACT US</span>
               </button>
             ) : (
               <Link
                 to="/contact-us"
-                className="hidden sm:inline-flex items-center justify-center font-ui text-[13px] uppercase tracking-wider font-semibold bg-cerd-blue text-white rounded-xl px-6 py-2.5 hover:bg-cerd-blue-dark transition-all duration-200 shadow-button active:scale-[0.98]"
+                className="hidden sm:inline-flex items-center justify-center font-ui text-[13px] uppercase tracking-wider font-semibold bg-cerd-blue text-white rounded-none px-6 py-2.5 hover:bg-cerd-blue-dark transition-all duration-200 shadow-button active:scale-[0.98]"
               >
                 <span>CONTACT US</span>
               </Link>
@@ -218,7 +218,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className, onContactClick }) => 
                       setMobileMenuOpen(false);
                       onContactClick();
                     }}
-                    className="w-full font-ui text-[13px] uppercase tracking-wider font-semibold bg-cerd-blue text-white rounded-xl py-3 flex items-center justify-center gap-2 shadow-button hover:bg-cerd-blue-dark transition-colors"
+                    className="w-full font-ui text-[13px] uppercase tracking-wider font-semibold bg-cerd-blue text-white rounded-none py-3 flex items-center justify-center gap-2 shadow-button hover:bg-cerd-blue-dark transition-colors"
                   >
                     <span>CONTACT US</span>
                     <ArrowUpRight size={16} />
@@ -227,7 +227,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className, onContactClick }) => 
                   <Link
                     to="/contact-us"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="w-full font-ui text-[13px] uppercase tracking-wider font-semibold bg-cerd-blue text-white rounded-xl py-3 flex items-center justify-center gap-2 shadow-button hover:bg-cerd-blue-dark transition-colors"
+                    className="w-full font-ui text-[13px] uppercase tracking-wider font-semibold bg-cerd-blue text-white rounded-none py-3 flex items-center justify-center gap-2 shadow-button hover:bg-cerd-blue-dark transition-colors"
                   >
                     <span>CONTACT US</span>
                     <ArrowUpRight size={16} />

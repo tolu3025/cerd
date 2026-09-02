@@ -86,7 +86,7 @@ export const Publications: React.FC = () => {
                   key={cat}
                   type="button"
                   onClick={() => setSelectedCategory(cat)}
-                  className={`font-ui text-xs font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
+                  className={`font-ui text-xs font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded-none transition-all cursor-pointer ${
                     active
                       ? 'bg-cerd-blue text-white shadow-button'
                       : 'bg-white text-muted border border-black/5 hover:text-dark hover:border-black/10'

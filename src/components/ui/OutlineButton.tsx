@@ -27,7 +27,7 @@ export const OutlineButton: React.FC<OutlineButtonProps> = ({
 }) => {
   const baseClasses = cn(
     'inline-flex items-center justify-center gap-2',
-    'rounded-xl px-6 py-3 font-ui font-medium text-sm uppercase tracking-wider',
+    'rounded-none px-6 py-3 font-ui font-medium text-sm uppercase tracking-wider',
     'transition-all duration-200 border cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98]',
     dark
       ? 'border-white/30 text-white hover:bg-white/10'
