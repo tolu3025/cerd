@@ -124,6 +124,9 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
             <Link to="/contact-us" className="hover:text-white transition-colors">
               Inquiries
             </Link>
+            <Link to="/admin" className="hover:text-white transition-colors text-white/50 hover:text-[#6f8bff]">
+              Admin Portal
+            </Link>
           </div>
         </div>
       </div>

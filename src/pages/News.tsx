@@ -9,58 +9,55 @@ import { FadeIn } from '../components/shared/FadeIn';
 export const News: React.FC = () => {
   const { hero } = NEWS_CONTENT;
 
-  const allArticles = [
-    {
-      id: '50th-anniversary-nuclear-science',
-      title: 'CERD Organizes 50th Anniversary of Nuclear Science in Nigeria',
-      date: 'May 18, 2026',
-      category: 'Event',
-      categoryClass: 'bg-cerd-blue/10 text-cerd-blue',
-      summary:
-        'CERD hosts a national symposium commemorating 50 years of peaceful nuclear science and technological research achievements in Nigeria, gathering IAEA delegates and national energy policy makers.',
-      href: '/news#50th-anniversary',
-    },
-    {
-      id: 'transition-pioneer-nuclear-scientists',
-      title: 'CERD Mourns the Transition of Two Nuclear Scientists',
-      date: 'May 10, 2026',
-      category: 'Obituary',
-      categoryClass: 'bg-gray-100 text-gray-600',
-      summary:
-        'The management and staff of CERD mourn the passing of two pioneer nuclear scientists who laid the foundation for atomic spectroscopy and particle accelerator operations in Nigeria.',
-      href: '/news#transition-scientists',
-    },
-    {
-      id: 'research-service-building-renovation',
-      title: 'CERD Research and Service Building Renovated',
-      date: 'April 18, 2026',
-      category: 'Infrastructure',
-      categoryClass: 'bg-green-100 text-green-700',
-      summary:
-        'The Research and Service complex has been completely upgraded with climate-controlled spectrometry suites, enhanced electromagnetic shielding, and smart collaborative seminar halls.',
-      href: '/news#building-renovation',
-    },
-    {
-      id: 'seminar-series-resumption',
-      title: 'Bi-Weekly Atomic & Energy Seminar Series Resumes',
-      date: 'April 15, 2026',
-      category: 'Seminar',
-      categoryClass: 'bg-purple-100 text-purple-700',
-      summary:
-        'The Directorate announces the resumption of the departmental technical seminar series featuring guest lectures from IAEA visiting fellows and Nigerian university faculties.',
-      href: '/news#seminar-series',
-    },
-    {
-      id: 'perovskite-solar-cell-breakthrough',
-      title: 'Radiation-Tolerant Perovskite Solar Cell Breakthrough',
-      date: 'Dec 28, 2025',
-      category: 'Research',
-      categoryClass: 'bg-cyan-100 text-cyan-700',
-      summary:
-        'Materials Division researchers synthesize novel passivating thin films achieving 21.4% conversion efficiency with negligible degradation under intense ultraviolet and gamma exposure.',
-      href: '/news#perovskite-breakthrough',
-    },
-  ];
+  const [articles, setArticles] = React.useState<any[]>([]);
+
+  React.useEffect(() => {
+    const saved = localStorage.getItem('cerd_dynamic_blog_posts');
+    if (saved) {
+      try {
+        setArticles(JSON.parse(saved));
+        return;
+      } catch (e) {
+        console.error('Failed to parse saved blog posts', e);
+      }
+    }
+    
+    setArticles([
+      {
+        id: '50th-anniversary-nuclear-science',
+        title: 'CERD Organizes 50th Anniversary of Nuclear Science in Nigeria',
+        date: 'May 18, 2026',
+        category: 'Event',
+        categoryClass: 'bg-[#1a2bc3]/10 text-[#1a2bc3]',
+        summary:
+          'CERD host a national symposium commemorating 50 years of peaceful nuclear of science and technological research achievement in Nigeria.',
+        href: '/news#50th-anniversary',
+        image: 'https://framerusercontent.com/images/ILa9NdPyVozIvcteVlNAP1sPFzI.jpeg?width=1470&height=980',
+      },
+      {
+        id: 'transition-pioneer-nuclear-scientists',
+        title: 'CERD Mourns the transition of Two Forecast Nuclear  Scientist',
+        date: 'May 10, 2026',
+        category: 'Obituary',
+        categoryClass: 'bg-gray-100 text-gray-600',
+        summary:
+          'The management and staff of CERD mourn the passing of two pioneer nuclear scientists who laid the foundation for energy research in Nigeria',
+        href: '/news#transition-scientists',
+        image: 'https://framerusercontent.com/images/XtZWdLIRgvd7bKFftKp1gEKPSqE.png?width=1536&height=1024',
+      },
+      {
+        id: 'research-service-building-renovation',
+        title: 'CERD Research and Service Wear New Look',
+        date: 'April 18, 2026',
+        category: 'Infrastructure',
+        categoryClass: 'bg-green-100 text-green-700',
+        summary:
+          'The Research and Service building has been completely renovated and upgraded with modern laboratories, offices, and smart seminar halls.',
+        href: '/news#building-renovation',
+        image: 'https://framerusercontent.com/images/jy9yG3PyRCsDOb2Dx45CUSZ93tg.png?width=1672&height=941',
+      },
+    ]);
+  }, []);
 
   return (
     <PageTransition className="w-full bg-canvas pt-32 pb-24 border-b border-black/5">
@@ -77,20 +74,20 @@ export const News: React.FC = () => {
           />
         </FadeIn>
 
-        {/* 5 NewsCards in 3-Column Responsive Grid */}
+        {/* NewsCards in 3-Column Responsive Grid */}
         <StaggerContainer
           stagger={0.1}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
         >
-          {allArticles.map((article) => (
+          {articles.map((article) => (
             <StaggerItem key={article.id}>
               <NewsCard
                 title={article.title}
                 date={article.date}
                 category={article.category}
-                categoryClassName={article.categoryClass}
+                categoryClassName={article.categoryClass || 'bg-[#1a2bc3]/10 text-[#1a2bc3]'}
                 summary={article.summary}
-                href={article.href}
+                href={article.href || `/news#${article.id}`}
                 className="h-full"
               />
             </StaggerItem>

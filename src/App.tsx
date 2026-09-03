@@ -8,6 +8,7 @@ import { Facilities } from './pages/Facilities';
 import { News } from './pages/News';
 import { Staff } from './pages/Staff';
 import { Contact } from './pages/Contact';
+import { Admin } from './pages/Admin';
 import { NotFound } from './pages/NotFound';
 
 export function App() {
@@ -48,6 +49,9 @@ export function App() {
             {/* Contact Page with Alias */}
             <Route path="/contact-us" element={<Contact />} />
             <Route path="/contact" element={<Contact />} />
+
+            {/* Admin Portal for Blog Posting */}
+            <Route path="/admin" element={<Admin />} />
 
             {/* 404 Fallback Route */}
             <Route path="*" element={<NotFound />} />
