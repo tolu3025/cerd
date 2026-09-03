@@ -34,7 +34,6 @@ export const News: React.FC = () => {
         href: '/news#50th-anniversary',
         image: '/images/news/50th-anniversary-flyer.png',
         imagePosition: 'object-top',
-        imageScale: 'scale-75',
       },
       {
         id: 'transition-pioneer-nuclear-scientists',
@@ -92,7 +91,6 @@ export const News: React.FC = () => {
                 href={article.href || `/news#${article.id}`}
                 image={article.image}
                 imagePosition={article.imagePosition}
-                imageScale={article.imageScale}
                 className="h-full"
               />
             </StaggerItem>

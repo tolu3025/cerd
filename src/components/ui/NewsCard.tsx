@@ -10,7 +10,6 @@ export interface NewsCardProps {
   summary: string;
   image?: string;
   imagePosition?: string;
-  imageScale?: string;
   href?: string;
   className?: string;
   categoryClassName?: string;
@@ -23,7 +22,6 @@ export const NewsCard: React.FC<NewsCardProps> = ({
   summary,
   image,
   imagePosition = 'object-center',
-  imageScale = 'scale-100',
   href = '#',
   className,
   categoryClassName,
@@ -59,15 +57,14 @@ export const NewsCard: React.FC<NewsCardProps> = ({
     >
       <div>
         {/* Media Placeholder or Image */}
-        <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl overflow-hidden mb-5 relative flex items-center justify-center">
+        <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl overflow-hidden mb-5 relative">
           {image ? (
             <img
               src={image}
               alt={title}
               className={cn(
                 'w-full h-full object-cover transition-transform duration-300 hover:scale-105',
-                imagePosition,
-                imageScale
+                imagePosition
               )}
               loading="lazy"
             />
