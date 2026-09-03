@@ -65,23 +65,6 @@ export const HeroSection: React.FC = () => {
         </FadeIn>
       </div>
 
-      {/* Ticker Strip at bottom */}
-      <div className="relative z-10 border-t border-white/10 bg-[#c9c9c96b] backdrop-blur-sm py-3 overflow-hidden">
-        <div className="flex gap-6 whitespace-nowrap animate-[marquee_20s_linear_infinite]">
-          {[...hero.ticker, ...hero.ticker].map((item, idx) => (
-            <span key={idx} className="font-sans text-white text-xs sm:text-sm font-medium tracking-wider flex-shrink-0">
-              {item}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* CENTRE FOR ENERGY badge overlaid on hero */}
-      <div className="absolute bottom-16 right-8 z-10 bg-[#c9c9c96b] backdrop-blur-sm border border-white/20 rounded-[12px] px-4 py-2 hidden lg:block">
-        <span className="font-sans text-white text-[11px] tracking-wider uppercase">
-          CENTRE FOR ENERGY RESEARCH DEVELOPMENT
-        </span>
-      </div>
     </section>
   );
 };
