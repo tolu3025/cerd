@@ -50,24 +50,42 @@ export const ResearchDivisions: React.FC = () => {
                 {/* Media Image / Illustration Placeholder */}
                 <div className="w-full lg:w-1/2">
                   <FadeIn delay={0.15} direction={isEven ? 'right' : 'left'}>
-                    <div className="aspect-[16/10] bg-gradient-to-br from-canvas via-gray-100 to-gray-200 border border-black/5 rounded-2xl overflow-hidden relative shadow-card flex flex-col justify-between p-6 sm:p-8">
-                      <div className="flex items-center justify-between">
-                        <Badge variant="blue">DIVISION {division.number}</Badge>
-                        <span className="font-ui text-xs font-semibold text-muted tracking-wider uppercase">
-                          CERD • OAU
-                        </span>
-                      </div>
-
-                      <div className="text-center my-auto py-6">
-                        <div className="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center mx-auto mb-3 border border-black/5">
-                          {getDivisionIcon(division.id)}
+                    {division.image ? (
+                      <div className="aspect-[16/10] rounded-2xl overflow-hidden relative shadow-card border border-black/5">
+                        <img
+                          src={division.image}
+                          alt={division.name}
+                          className="w-full h-full object-cover"
+                        />
+                        {/* Badge overlay */}
+                        <div className="absolute top-4 left-4">
+                          <Badge variant="blue">DIVISION {division.number}</Badge>
                         </div>
-                        <h4 className="font-serif text-xl sm:text-2xl text-dark font-medium">
-                          {division.name}
-                        </h4>
+                        <div className="absolute top-4 right-4">
+                          <span className="font-ui text-xs font-semibold text-white bg-black/40 backdrop-blur-sm px-2 py-1 rounded-md tracking-wider uppercase">
+                            CERD • OAU
+                          </span>
+                        </div>
                       </div>
+                    ) : (
+                      <div className="aspect-[16/10] bg-gradient-to-br from-canvas via-gray-100 to-gray-200 border border-black/5 rounded-2xl overflow-hidden relative shadow-card flex flex-col justify-between p-6 sm:p-8">
+                        <div className="flex items-center justify-between">
+                          <Badge variant="blue">DIVISION {division.number}</Badge>
+                          <span className="font-ui text-xs font-semibold text-muted tracking-wider uppercase">
+                            CERD • OAU
+                          </span>
+                        </div>
 
-                    </div>
+                        <div className="text-center my-auto py-6">
+                          <div className="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center mx-auto mb-3 border border-black/5">
+                            {getDivisionIcon(division.id)}
+                          </div>
+                          <h4 className="font-serif text-xl sm:text-2xl text-dark font-medium">
+                            {division.name}
+                          </h4>
+                        </div>
+                      </div>
+                    )}
                   </FadeIn>
                 </div>
 

@@ -32,9 +32,37 @@ export const DirectorProfile: React.FC = () => {
               </div>
 
               {/* Director Name */}
-              <h2 className="font-display font-semibold text-2xl sm:text-3xl lg:text-[32px] text-[#0a0a0a] tracking-tight mb-1">
-                {director.name}
-              </h2>
+              {director.scholarUrl ? (
+                <a
+                  href={director.scholarUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-display font-semibold text-2xl sm:text-3xl lg:text-[32px] text-[#0a0a0a] tracking-tight mb-1 hover:text-[#1a2bc3] transition-colors duration-200 inline-flex items-center gap-2 group/dlink"
+                  title="View Scholar Profile"
+                >
+                  {director.name}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="opacity-0 group-hover/dlink:opacity-100 transition-opacity shrink-0"
+                  >
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </a>
+              ) : (
+                <h2 className="font-display font-semibold text-2xl sm:text-3xl lg:text-[32px] text-[#0a0a0a] tracking-tight mb-1">
+                  {director.name}
+                </h2>
+              )}
 
               {/* Role */}
               <p className="font-sans text-sm sm:text-base text-[#0a0a0a] font-normal mb-6">

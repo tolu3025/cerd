@@ -88,6 +88,7 @@ export const News: React.FC = () => {
                 categoryClassName={article.categoryClass || 'bg-[#1a2bc3]/10 text-[#1a2bc3]'}
                 summary={article.summary}
                 href={article.href || `/news#${article.id}`}
+                image={article.image}
                 className="h-full"
               />
             </StaggerItem>

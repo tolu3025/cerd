@@ -498,6 +498,7 @@ export interface ResearchDivisionDetail {
   summary: string;
   keyAreas: string[];
   equipment: string[];
+  image?: string;
 }
 
 export interface ResearchContent {
@@ -546,6 +547,7 @@ export const RESEARCH_CONTENT: ResearchContent = {
         'Thermo-Luminescent Dosimetry (TLD) Reader System',
         'Automated Alpha/Beta Counting Stations',
       ],
+      image: '/images/research/division1-nuclear.jpg',
     },
     {
       id: 'materials-electronics',
@@ -566,6 +568,7 @@ export const RESEARCH_CONTENT: ResearchContent = {
         'X-Ray Diffractometer (XRD)',
         'UV-Vis-NIR Spectrophotometer',
       ],
+      image: '/images/research/division2-materials.jpg',
     },
     {
       id: 'energy-management',
@@ -586,6 +589,7 @@ export const RESEARCH_CONTENT: ResearchContent = {
         'Electrochemical Battery Cycle & Impedance Analyzer',
         'Precision Meteorological & Solar Radiometric Station',
       ],
+      image: '/images/research/division3-energy.jpg',
     },
     {
       id: 'environmental-science',
@@ -606,6 +610,7 @@ export const RESEARCH_CONTENT: ResearchContent = {
         'Broadband Digital Seismological Station',
         'Portable Field X-Ray Fluorescence (pXRF) Analyzers',
       ],
+      image: '/images/research/division4-environmental.jpg',
     },
   ],
   collaborateStats: [
@@ -904,6 +909,7 @@ export interface StaffMember {
   qualifications?: string;
   specialization?: string;
   email?: string;
+  scholarUrl?: string;
 }
 
 export interface StaffDivisionGroup {
@@ -944,6 +950,7 @@ export const STAFF_CONTENT: StaffContent = {
     featuredBadge: 'Featured Director',
     image:
       'https://framerusercontent.com/images/AkFPG5KN7utP3pPMVa7tB5YE.jpeg?width=3381&height=4226',
+    scholarUrl: 'https://scholar.google.com/citations?user=XHF1SEwAAAAJ&hl=en',
     bioParagraphs: [
       'Prof. Abiodun Suleiman Momodu is a Research Professor and became the Director of the Centre for Energy Research and Development (CERD), Obafemi Awolowo University, Ile-Ife on 1 August 2025. He has over 20 years of experience working at the intersection of energy, climate change, and sustainable development in Nigeria and across West Africa. He is widely recognised for pioneering the use of system dynamics modelling to understand and improve electricity systems, low-carbon strategies, and renewable energy adoption.',
       'He hold a B.Sc (Honors) (1988) in Agricultural Engineering from the university of maiduguri and an M.Sc (2006) and Ph.D (2012) in Technology Management from Obafemi Awolowo University…..',
@@ -974,18 +981,21 @@ export const STAFF_CONTENT: StaffContent = {
           role: 'Researcher specializing in environmental chemistry, radioactivity, and thin film technology',
           image:
             'https://framerusercontent.com/images/ERfQdEsdeZmxyamKHt2gOIMTcJU.jpg?width=992&height=744',
+          scholarUrl: 'https://www.bohrium.com/en/scholar/jx1454420/K.T._Ogundele',
         },
         {
           name: 'Prof. Oladotun Wasiu (W.O.) Makinde',
           role: 'Research professor specializing in environmental monitoring, heavy metal analysis and material science',
           image:
             'https://framerusercontent.com/images/Swg45GaKLtEHgjHoIfMZ3LhRrg.jpg?width=960&height=1280',
+          scholarUrl: 'https://scholar.google.com/citations?user=f7jl5j0AAAAJ&hl=en',
         },
         {
           name: 'Dr. Ayodeji Adekunle Eluyemi (A.A Eluyemi)',
           role: 'Research fellow and Geophysicist specializing in seismotectonics, seismic hazard assessment, GIS-based site…',
           image:
             'https://framerusercontent.com/images/zII6i6TrRp9KiCHbMgG46zCGZI.jpg?width=960&height=1280',
+          scholarUrl: 'https://www.researchgate.net/profile/Ayodeji-Eluyemi',
         },
       ],
     },
@@ -999,16 +1009,18 @@ export const STAFF_CONTENT: StaffContent = {
         'Experts dedicated to energy management and Technology research and Innovation',
       staff: [
         {
-          name: 'Prof.  William Siyanbola',
+          name: 'Prof. Willie Siyanbola',
           role: 'Research Professor specializing in Science, Technology , Innovation policy and Energy studies',
           image:
             'https://framerusercontent.com/images/Y3vWYcl1KNP9jakMrrOzwReJg.jpg?width=817&height=1174',
+          scholarUrl: 'https://scholar.google.com/citations?user=1Qlt1BgAAAAJ&hl=en',
         },
         {
           name: 'Prof. John-Felix kayode (J.F.K.) Akinbami',
           role: 'Research Professor and former Director of CERD (2020-2025) specializing in Energy system Modelling, Energy Policy',
           image:
             'https://framerusercontent.com/images/ARgaDhZpA3y3PkbMCxRFbFvIMY.jpg?width=1068&height=712',
+          scholarUrl: 'https://www.researchgate.net/profile/John-Felix-Akinbami',
         },
       ],
     },
@@ -1026,18 +1038,21 @@ export const STAFF_CONTENT: StaffContent = {
           role: 'Principal research fellow and Head of Applied Nuclear Science and Technology Divison, specializing in Nuclear Physics',
           image:
             'https://framerusercontent.com/images/AV8yYmyy6Cj35tbitwBi47EfI.jpg?width=960&height=1280',
+          scholarUrl: 'https://scholar.google.com/citations?user=MwKmt-4AAAAJ&hl=en',
         },
         {
           name: 'Dr. Adebimpe Amos Amosun',
           role: 'Physicist and researcher specializing in applied nuclear science, reactor physics, radiation studies, and computational….',
           image:
             'https://framerusercontent.com/images/xIAmJWWTu7YZYt0tcei1ELr60.jpg?width=4266&height=5184',
+          scholarUrl: 'https://scholar.google.com/citations?user=ENLjZsYAAAAJ&hl=en',
         },
         {
           name: 'Dr. Olamitomide Gbenga Fadodun',
           role: 'Academic and researcher specializing in computational Nuclear science, reactor physics and computational fluid…',
           image:
             'https://framerusercontent.com/images/Gi43NtdWEcAoTL7zJhmNl87SQ.jpg?width=992&height=744',
+          scholarUrl: 'https://scholar.google.com/citations?user=0FLc7YsAAAAJ&hl=en',
         },
       ],
     },
@@ -1055,18 +1070,21 @@ export const STAFF_CONTENT: StaffContent = {
           role: 'Research professor with expertise in Material science, Nanotechnology and Thin films',
           image:
             'https://framerusercontent.com/images/MHAxAJ6Dz0T0kVMhGnivaLGEGEo.jpg?width=744&height=992',
+          scholarUrl: 'https://www.researchgate.net/scientific-contributions/Adeniyi-Yisau-Fasasi-2236193548',
         },
         {
           name: 'Prof. Emmanuel Ajenifuja',
           role: 'Research professor specializing in Material Science and Ion Beam Analysis',
           image:
             'https://framerusercontent.com/images/Wg5I4917XJYASUoFk9lZUo07lEY.jpg?width=960&height=1280',
+          scholarUrl: 'https://scholar.google.com/citations?user=pOEkeckAAAAJ&hl=en',
         },
         {
           name: 'Mr. Emmanuel Omeiza Ajoge  (Ajoge E.O)',
           role: 'Research Engineer specializing in Materials characterization, microstructural analysis of steel and…',
           image:
             'https://framerusercontent.com/images/4rPNvjLfKhE1ptXprHyH9S0mX0Q.jpg?width=960&height=1280',
+          scholarUrl: 'https://www.researchgate.net/profile/Emmanuel-Ajoge-2',
         },
       ],
     },
@@ -1088,8 +1106,7 @@ export const STAFF_CONTENT: StaffContent = {
         {
           name: 'Mrs Adeyeye Margret Mopelola',
           role: 'Deputy Bursar and Finance officer to CERD',
-          image:
-            'https://framerusercontent.com/images/KetJL8B66DabqecH5OeIAnj4M.jpg?width=636&height=1080',
+          image: '/images/staff/adeyeye-magret-mopelola.jpg',
         },
         {
           name: 'Mrs Orisayomi',

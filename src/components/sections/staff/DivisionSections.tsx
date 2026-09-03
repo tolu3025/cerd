@@ -42,10 +42,38 @@ export const DivisionSections: React.FC = () => {
                       />
                     </div>
 
-                    {/* Staff Name */}
-                    <h4 className="font-display font-medium text-xl sm:text-[22px] text-[#0a0a0a] tracking-tight leading-snug mb-2">
-                      {member.name}
-                    </h4>
+                    {/* Staff Name — clickable if scholarUrl exists */}
+                    {member.scholarUrl ? (
+                      <a
+                        href={member.scholarUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-display font-medium text-xl sm:text-[22px] text-[#0a0a0a] tracking-tight leading-snug mb-2 hover:text-[#1a2bc3] transition-colors duration-200 inline-flex items-center gap-1.5 group/link"
+                        title="View Scholar Profile"
+                      >
+                        {member.name}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="opacity-0 group-hover/link:opacity-100 transition-opacity shrink-0 mt-0.5"
+                        >
+                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                          <polyline points="15 3 21 3 21 9" />
+                          <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
+                      </a>
+                    ) : (
+                      <h4 className="font-display font-medium text-xl sm:text-[22px] text-[#0a0a0a] tracking-tight leading-snug mb-2">
+                        {member.name}
+                      </h4>
+                    )}
 
                     {/* Staff Role / Description */}
                     <p className="font-sans text-sm text-[#0a0a0a]/80 leading-relaxed">
