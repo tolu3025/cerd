@@ -3,7 +3,7 @@ import { PageTransition } from '../components/shared/PageTransition';
 import { FadeIn } from '../components/shared/FadeIn';
 import { NEWS_CONTENT } from '../data/content';
 import type { NewsArticleItem } from '../data/content';
-import { Lock, Plus, Trash2, Edit3, Image, Calendar, Tag, CheckCircle2, ShieldAlert } from 'lucide-react';
+import { Lock, Plus, Trash2, Edit3, Image, Calendar, Tag, CheckCircle2, ShieldAlert, Upload, X } from 'lucide-react';
 
 const LOCAL_STORAGE_KEY = 'cerd_dynamic_blog_posts';
 
@@ -82,6 +82,24 @@ export const Admin: React.FC = () => {
     setEditingId(null);
   };
 
+  // Image Upload File Handler (converts to base64 Data URL)
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (file.size > 3 * 1024 * 1024) {
+        alert('File size is too large. Please select an image under 3MB.');
+        return;
+      }
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        if (reader.result) {
+          setImageUrl(reader.result as string);
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleEdit = (post: NewsArticleItem) => {
     setEditingId(post.id);
     setTitle(post.title);
@@ -150,7 +168,7 @@ export const Admin: React.FC = () => {
               CERD Admin Portal
             </h1>
             <p className="font-sans text-sm text-white/60 mb-8">
-              Enter administrator password to post and manage news & research articles.
+              Enter administrator passcode to post and manage news & research articles.
             </p>
 
             {authError && (
@@ -182,10 +200,6 @@ export const Admin: React.FC = () => {
                 Access Admin Portal
               </button>
             </form>
-
-            <p className="font-sans text-xs text-white/40 mt-6">
-              Default passcode: <code className="text-white/70 bg-white/10 px-1.5 py-0.5 rounded">admin123</code>
-            </p>
           </div>
         </FadeIn>
       </PageTransition>
@@ -296,19 +310,50 @@ export const Admin: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Image URL */}
+                {/* Featured Image Section (File Upload OR Image URL) */}
                 <div>
                   <label className="font-sans text-xs font-semibold text-[#0a0a0a] block mb-1 flex items-center gap-1">
                     <Image size={12} />
-                    <span>Featured Image URL</span>
+                    <span>Featured Picture / Image</span>
                   </label>
+                  
+                  {/* File Upload Box */}
+                  <div className="mb-2">
+                    <label className="flex items-center justify-center gap-2 w-full bg-canvas border border-dashed border-black/20 hover:border-[#1a2bc3] rounded-lg p-3 cursor-pointer transition-colors text-xs font-sans text-muted hover:text-dark">
+                      <Upload size={16} className="text-[#1a2bc3]" />
+                      <span>Upload Picture from Computer</span>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleFileUpload}
+                        className="hidden"
+                      />
+                    </label>
+                  </div>
+
+                  {/* Or Image URL Input */}
                   <input
                     type="url"
                     value={imageUrl}
                     onChange={(e) => setImageUrl(e.target.value)}
-                    placeholder="https://framerusercontent.com/images/..."
+                    placeholder="Or paste image URL (https://...)"
                     className="w-full bg-canvas border border-black/15 rounded-lg px-3.5 py-2.5 text-dark text-sm focus:outline-none focus:border-[#1a2bc3]"
                   />
+
+                  {/* Image Preview Box */}
+                  {imageUrl && (
+                    <div className="mt-2 relative w-full h-32 rounded-lg overflow-hidden border border-black/10 group">
+                      <img src={imageUrl} alt="Preview" className="w-full h-full object-cover" />
+                      <button
+                        type="button"
+                        onClick={() => setImageUrl('')}
+                        className="absolute top-2 right-2 bg-black/70 hover:bg-black text-white p-1 rounded-full transition-colors"
+                        title="Remove image"
+                      >
+                        <X size={14} />
+                      </button>
+                    </div>
+                  )}
                 </div>
 
                 {/* Location */}
