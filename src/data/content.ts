@@ -149,7 +149,7 @@ export interface HomeContent {
 
 export const HOME_CONTENT: HomeContent = {
   hero: {
-    badge: 'Curiousity',
+    badge: 'Centre for Energy Research and Development',
     heading: "Advancing Nigeria's ",
     headingBlue: 'Energy ',
     headingSuffix: 'Future',
@@ -479,7 +479,7 @@ export const ABOUT_CONTENT: AboutContent = {
   directorQuote: {
     quote:
       'At CERD, our commitment is anchored on scientific rigor and national relevance. From probing atomic structures with our particle accelerator to engineering robust renewable microgrids, we harness energy research to transform livelihoods across Africa.',
-    name: 'Prof. J. A. Ajao',
+    name: 'Prof. Abiodun Suleiman Mohammed',
     title: 'Director',
     institution: 'Centre for Energy Research and Development, OAU Ile-Ife',
     image:
