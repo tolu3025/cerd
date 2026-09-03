@@ -858,180 +858,203 @@ export const NEWS_CONTENT: NewsContent = {
 export interface StaffMember {
   name: string;
   role: string;
-  qualifications: string;
-  specialization: string;
-  email: string;
+  image: string;
+  description?: string;
+  qualifications?: string;
+  specialization?: string;
+  email?: string;
 }
 
 export interface StaffDivisionGroup {
   divisionName: string;
+  headingPrefix?: string;
+  firstHighlight?: string;
+  headingMiddle?: string;
+  secondHighlight?: string;
+  headingSuffix?: string;
+  subtitle: string;
   staff: StaffMember[];
 }
 
 export interface StaffContent {
   hero: {
     badge: string;
-    heading: string;
+    headingHighlight: string;
     subheading: string;
   };
   director: StaffMember & {
-    message: string;
+    featuredBadge: string;
+    bioParagraphs: string[];
+    specialties: string[];
   };
   divisions: StaffDivisionGroup[];
 }
 
 export const STAFF_CONTENT: StaffContent = {
   hero: {
-    badge: 'ACADEMIC & TECHNICAL FACULTY',
-    heading: 'Distinguished Scientists, Engineers & Staff',
+    badge: 'OUR TEAM',
+    headingHighlight: 'Minds',
     subheading:
-      'Meet the multidisciplinary team of directors, research professors, scientists, energy engineers, and technical personnel powering research excellence at CERD.',
+      "A dedicated team of researchers, engineers, and visionaries driving Africa's energy future.",
   },
   director: {
     name: 'Prof. Abiodun Suleiman Momodu',
     role: 'Research Professor & Director',
-    qualifications: 'B.Sc., M.Sc., Ph.D.',
-    specialization:
-      'Energy Economics, Environmental & Energy Policy, Technology Management & Energy Systems Modeling',
+    featuredBadge: 'Featured Director',
+    image:
+      'https://framerusercontent.com/images/AkFPG5KN7utP3pPMVa7tB5YE.jpeg?width=3381&height=4226',
+    bioParagraphs: [
+      'Prof. Abiodun Suleiman Momodu is a Research Professor and became the Director of the Centre for Energy Research and Development (CERD), Obafemi Awolowo University, Ile-Ife on 1 August 2025. He has over 20 years of experience working at the intersection of energy, climate change, and sustainable development in Nigeria and across West Africa. He is widely recognised for pioneering the use of system dynamics modelling to understand and improve electricity systems, low-carbon strategies, and renewable energy adoption.',
+      'He hold a B.Sc (Honors) (1988) in Agricultural Engineering from the university of maiduguri and an M.Sc (2006) and Ph.D (2012) in Technology Management from Obafemi Awolowo University…..',
+    ],
+    specialties: [
+      'System dynamic modelling',
+      'Energy Systems & Climate change modelling',
+      'Energy Planning & Environmental Management',
+      'Greenhouse gas (GHG) inventory & emission assessment',
+      'Renewable energy adoption & waste to energy',
+    ],
+    qualifications: 'B.Sc. (Maiduguri), M.Sc., Ph.D. (OAU)',
+    specialization: 'Energy Economics & System Dynamics Modeling',
     email: 'amomodu@cerd.oau.edu.ng',
-    message:
-      'Welcome to the Centre for Energy Research and Development (CERD), Obafemi Awolowo University. Our dedicated team of research professors, scientists, engineers, and technical services staff work collaboratively to champion innovative energy solutions and nuclear science research for national development.',
   },
   divisions: [
     {
-      divisionName: 'Environmental & Earth Science',
+      divisionName: 'Division of Environmental and Earth Science',
+      headingPrefix: 'Division of ',
+      firstHighlight: 'Environmental',
+      headingMiddle: ' and ',
+      secondHighlight: 'Earth Science',
+      subtitle:
+        'Experts dedicated to environmental and earth sciences research and innovation.',
       staff: [
         {
-          name: 'Dr. Katherine Temitope (K.T.) Ogundele',
-          role: 'Senior Research Fellow & Division Head',
-          qualifications: 'B.Sc., M.Sc., Ph.D. (Environmental Radiochemistry)',
-          specialization:
-            'Naturally Occurring Radioactive Materials (NORM), Environmental Radiochemistry, Heavy Metal Analysis & Water Quality Surveillance',
-          email: 'ktogundele@cerd.oau.edu.ng',
+          name: 'Dr. Katherine Temitope (K.T) Ogundele',
+          role: 'Researcher specializing in environmental chemistry, radioactivity, and thin film technology',
+          image:
+            'https://framerusercontent.com/images/ERfQdEsdeZmxyamKHt2gOIMTcJU.jpg?width=992&height=744',
         },
         {
           name: 'Prof. Oladotun Wasiu (W.O.) Makinde',
-          role: 'Research Professor',
-          qualifications: 'B.Sc., M.Sc., Ph.D. (Applied Geophysics)',
-          specialization:
-            'Applied Geophysics, Seismotectonics, Crustal Dynamics & Soil Radon Emanation Monitoring',
-          email: 'wmakinde@cerd.oau.edu.ng',
+          role: 'Research professor specializing in environmental monitoring, heavy metal analysis and material science',
+          image:
+            'https://framerusercontent.com/images/Swg45GaKLtEHgjHoIfMZ3LhRrg.jpg?width=960&height=1280',
         },
         {
-          name: 'Dr. Ayodeji Adekunle Eluyemi (A.A. Eluyemi)',
-          role: 'Senior Research Fellow',
-          qualifications: 'B.Sc., M.Sc., Ph.D. (Radiation Biophysics)',
-          specialization:
-            'Radiation Biophysics, Environmental Radioactivity Monitoring & Trace Elemental Assays',
-          email: 'aeluyemi@cerd.oau.edu.ng',
+          name: 'Dr. Ayodeji Adekunle Eluyemi (A.A Eluyemi)',
+          role: 'Research fellow and Geophysicist specializing in seismotectonics, seismic hazard assessment, GIS-based site…',
+          image:
+            'https://framerusercontent.com/images/zII6i6TrRp9KiCHbMgG46zCGZI.jpg?width=960&height=1280',
         },
       ],
     },
     {
-      divisionName: 'Energy Management & Technology',
+      divisionName: 'Division of Energy Management and Technology',
+      headingPrefix: 'Division of ',
+      firstHighlight: 'Energy Management',
+      headingMiddle: ' and ',
+      secondHighlight: 'Technology',
+      subtitle:
+        'Experts dedicated to energy management and Technology research and Innovation',
       staff: [
         {
-          name: 'Prof. William Siyanbola',
-          role: 'Research Professor & Division Head',
-          qualifications: 'B.Sc., M.Sc., Ph.D. (Energy Systems & Policy)',
-          specialization:
-            'Energy Technology Planning, Solar Photovoltaic/Thermal Systems & National Energy Policy',
-          email: 'wsiyanbola@cerd.oau.edu.ng',
+          name: 'Prof.  William Siyanbola',
+          role: 'Research Professor specializing in Science, Technology , Innovation policy and Energy studies',
+          image:
+            'https://framerusercontent.com/images/Y3vWYcl1KNP9jakMrrOzwReJg.jpg?width=817&height=1174',
         },
         {
-          name: 'Prof. John-Felix Kayode (J.F.K.) Akinbami',
-          role: 'Research Professor',
-          qualifications: 'B.Sc., M.Sc., Ph.D. (Energy Economics)',
-          specialization:
-            'Energy Systems Economics, Biomass Gasification, Pyrolysis Systems & Climate Mitigation Strategy',
-          email: 'jakinbami@cerd.oau.edu.ng',
+          name: 'Prof. John-Felix kayode (J.F.K.) Akinbami',
+          role: 'Research Professor and former Director of CERD (2020-2025) specializing in Energy system Modelling, Energy Policy',
+          image:
+            'https://framerusercontent.com/images/ARgaDhZpA3y3PkbMCxRFbFvIMY.jpg?width=1068&height=712',
         },
       ],
     },
     {
-      divisionName: 'Applied Nuclear Science & Technology',
+      divisionName: 'Division of Applied Nuclear Science and Technology',
+      headingPrefix: 'Division of Applied ',
+      firstHighlight: 'Nuclear Science',
+      headingMiddle: ' and ',
+      secondHighlight: 'Technology',
+      subtitle:
+        'Expert dedicated to applied nuclear science and technology research and innovation.',
       staff: [
         {
           name: 'Dr. Mouftahou B. Latif (M.B. Latif)',
-          role: 'Senior Research Fellow & Accelerator Physicist',
-          qualifications: 'B.Sc., M.Sc., Ph.D. (Nuclear Physics)',
-          specialization:
-            'Pelletron Tandem Accelerator Operations, Ion Beam Analysis (PIXE/PIGE) & Nuclear Spectroscopy',
-          email: 'mlatif@cerd.oau.edu.ng',
+          role: 'Principal research fellow and Head of Applied Nuclear Science and Technology Divison, specializing in Nuclear Physics',
+          image:
+            'https://framerusercontent.com/images/AV8yYmyy6Cj35tbitwBi47EfI.jpg?width=960&height=1280',
         },
         {
           name: 'Dr. Adebimpe Amos Amosun',
-          role: 'Senior Research Fellow',
-          qualifications: 'B.Sc., M.Sc., Ph.D. (Health Physics)',
-          specialization:
-            'Health Physics, Radiation Dosimetry & Thermoluminescent Badging (TLD Systems)',
-          email: 'aamosun@cerd.oau.edu.ng',
+          role: 'Physicist and researcher specializing in applied nuclear science, reactor physics, radiation studies, and computational….',
+          image:
+            'https://framerusercontent.com/images/xIAmJWWTu7YZYt0tcei1ELr60.jpg?width=4266&height=5184',
         },
         {
           name: 'Dr. Olamitomide Gbenga Fadodun',
-          role: 'Research Fellow',
-          qualifications: 'B.Sc., M.Sc., Ph.D. (Nuclear Engineering)',
-          specialization:
-            'Neutron Activation Analysis (NAA), Reactor Physics & Isotope Applications',
-          email: 'gfadodun@cerd.oau.edu.ng',
+          role: 'Academic and researcher specializing in computational Nuclear science, reactor physics and computational fluid…',
+          image:
+            'https://framerusercontent.com/images/Gi43NtdWEcAoTL7zJhmNl87SQ.jpg?width=992&height=744',
         },
       ],
     },
     {
-      divisionName: 'Materials & Electronics',
+      divisionName: 'Division of Materials and Electronics',
+      headingPrefix: 'Division of ',
+      firstHighlight: 'Materials',
+      headingMiddle: ' and ',
+      secondHighlight: 'Electronics',
+      subtitle:
+        'Experts dedicated to materials and electronics research and innovation.',
       staff: [
         {
-          name: 'Prof. A.Y. Fasasi',
-          role: 'Research Professor & Division Head',
-          qualifications: 'B.Sc., M.Sc., Ph.D. (Materials Science & Physics)',
-          specialization:
-            'Materials Physics, Radiation Characterization & Advanced Thin Film Synthesis',
-          email: 'afasasi@cerd.oau.edu.ng',
+          name: 'Prof. A.Y Fasasi',
+          role: 'Research professor with expertise in Material science, Nanotechnology and Thin films',
+          image:
+            'https://framerusercontent.com/images/MHAxAJ6Dz0T0kVMhGnivaLGEGEo.jpg?width=744&height=992',
         },
         {
           name: 'Prof. Emmanuel Ajenifuja',
-          role: 'Research Professor',
-          qualifications: 'B.Sc., M.Sc., Ph.D. (Metallurgical Engineering)',
-          specialization:
-            'Magnetron Sputtering, Nanostructured Coatings & Radiation Damage in Alloys',
-          email: 'eajenifuja@cerd.oau.edu.ng',
+          role: 'Research professor specializing in Material Science and Ion Beam Analysis',
+          image:
+            'https://framerusercontent.com/images/Wg5I4917XJYASUoFk9lZUo07lEY.jpg?width=960&height=1280',
         },
         {
-          name: 'Mr. Emmanuel Omeiza Ajoge (Ajoge E.O.)',
-          role: 'Senior Technical Officer & Electronics Specialist',
-          qualifications: 'B.Tech., M.Sc. (Electrical/Electronics)',
-          specialization:
-            'Nuclear Instrumentation, Semiconductor Testing & Multichannel Analyzer Maintenance',
-          email: 'eajoge@cerd.oau.edu.ng',
+          name: 'Mr. Emmanuel Omeiza Ajoge  (Ajoge E.O)',
+          role: 'Research Engineer specializing in Materials characterization, microstructural analysis of steel and…',
+          image:
+            'https://framerusercontent.com/images/4rPNvjLfKhE1ptXprHyH9S0mX0Q.jpg?width=960&height=1280',
         },
       ],
     },
     {
-      divisionName: 'Maintenance & Services',
+      divisionName: 'Division of Maintenance and services',
+      headingPrefix: 'Division of ',
+      firstHighlight: 'Maintenance',
+      headingMiddle: ' and ',
+      secondHighlight: 'services',
+      subtitle:
+        'Experts dedicated to administration & support services research and Innovation.',
       staff: [
         {
           name: 'Mr. Titilola',
-          role: 'Chief Technical Officer & Maintenance Head',
-          qualifications: 'HND, B.Sc. (Electrical & Mechanical Engineering)',
-          specialization:
-            'Facility High-Voltage Electrical Infrastructure, Grid Synchronization & Emergency Systems',
-          email: 'titilola@cerd.oau.edu.ng',
+          role: 'Staff member providing operational support at the centre',
+          image:
+            'https://framerusercontent.com/images/Tl7MUiFJwz673GB61Kh4W1xT4Y.jpg?width=744&height=992',
         },
         {
-          name: 'Mrs. Adeyeye Margret Mopelola',
-          role: 'Principal Administrative & Services Officer',
-          qualifications: 'B.A., M.Sc. (Public Administration)',
-          specialization:
-            'Administrative Logistics, Secretarial Management & Directorate Relations',
-          email: 'mmadeyeye@cerd.oau.edu.ng',
+          name: 'Mrs Adeyeye Margret Mopelola',
+          role: 'Deputy Bursar and Finance officer to CERD',
+          image:
+            'https://framerusercontent.com/images/KetJL8B66DabqecH5OeIAnj4M.jpg?width=636&height=1080',
         },
         {
-          name: 'Mrs. Orisayomi',
-          role: 'Senior Administrative Services Officer',
-          qualifications: 'B.Sc. (Business Administration)',
-          specialization:
-            'Personnel Administration, Facility Operations & Staff Welfare Coordination',
-          email: 'orisayomi@cerd.oau.edu.ng',
+          name: 'Mrs Orisayomi',
+          role: 'Administrative staff member at the centre for Energy Research and Development..',
+          image:
+            'https://framerusercontent.com/images/s8tHmzmgoLnsKwp6ce4QPV79BtA.jpg?width=992&height=744',
         },
       ],
     },

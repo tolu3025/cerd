@@ -1,31 +1,28 @@
 import React from 'react';
-import { Badge } from '../../ui/Badge';
 import { FadeIn } from '../../shared/FadeIn';
-import { HeroSliderBackground } from '../../shared/HeroSliderBackground';
+import { STAFF_CONTENT } from '../../../data/content';
 
 export const StaffHero: React.FC = () => {
   return (
-    <HeroSliderBackground overlayOpacity="bg-dark/80 bg-gradient-to-r from-dark/95 via-dark/85 to-dark/70">
-      <section className="pt-36 pb-20 sm:pb-24">
-        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="flex items-center gap-3 mb-6">
-              <img src="/logo.png" alt="CERD Logo" className="h-8 w-auto bg-white/20 p-1 rounded backdrop-blur-xs" />
-              <Badge variant="cyan" className="font-bold text-xs uppercase tracking-widest px-3 py-1">
-                OUR TEAM | ACADEMIC & TECHNICAL FACULTY
-              </Badge>
-            </div>
+    <section className="relative w-full bg-[#0f1054] pt-36 sm:pt-44 pb-20 sm:pb-28 overflow-hidden">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center relative z-10">
+        <FadeIn>
+          {/* Badge */}
+          <div className="inline-flex items-center justify-center border border-white rounded-[12px] px-4 py-1.5 mb-6 text-white text-xs sm:text-sm font-sans tracking-wider uppercase">
+            {STAFF_CONTENT.hero.badge}
+          </div>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-semibold leading-[1.1] tracking-tight mb-6 max-w-4xl">
-              Meet the Minds Powering Research & Innovation
-            </h1>
+          {/* Heading */}
+          <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-[64px] text-white leading-[1.1] tracking-[-0.03em] max-w-4xl mx-auto">
+            Meet the <span className="text-[#a6d8fd]">{STAFF_CONTENT.hero.headingHighlight}</span> powering Innovation
+          </h1>
 
-            <p className="font-sans text-white/90 text-lg sm:text-xl lg:text-[22px] leading-relaxed max-w-3xl font-medium">
-              Our multidisciplinary faculty comprises distinguished research professors, nuclear physicists, material scientists, energy engineers, and specialized technical services personnel committed to world-class atomic and renewable energy innovation.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-    </HeroSliderBackground>
+          {/* Subheading */}
+          <p className="mt-5 font-sans text-white/80 text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto">
+            {STAFF_CONTENT.hero.subheading}
+          </p>
+        </FadeIn>
+      </div>
+    </section>
   );
 };
