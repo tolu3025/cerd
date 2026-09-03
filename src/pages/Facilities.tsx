@@ -9,8 +9,6 @@ import {
   TestTube2,
   Activity,
   Leaf,
-  Atom,
-  Building2,
   CheckCircle2,
 } from 'lucide-react';
 import { SectionHeading } from '../components/ui/SectionHeading';
@@ -31,7 +29,7 @@ export const Facilities: React.FC = () => {
       description:
         'The National Electrostatics Corporation (NEC 5SDH-4) 1.7 MV Tandem Pelletron Particle Accelerator complex provides high-purity proton and alpha ion beams for non-destructive elemental assays, trace mineral characterization, and accelerated radiation damage simulations.',
       bg: 'bg-white',
-      gradient: 'from-blue-100 via-indigo-50 to-gray-200',
+      image: '/images/facilities/C3HJWkBA2Q4hK1VNV2cUe41MbQ.png',
       capabilities: [
         {
           title: 'Ion Beam Analysis (PIXE & PIGE)',
@@ -58,7 +56,7 @@ export const Facilities: React.FC = () => {
       description:
         'A state-of-the-art materials synthesis and characterization facility dedicated to the engineering of radiation-tolerant nanocomposites, photovoltaic thin films, semiconductor barriers, and supercapacitor electrode interfaces.',
       bg: 'bg-canvas',
-      gradient: 'from-sky-100 via-blue-50 to-gray-200',
+      image: '/images/facilities/XuacEUrHtbA10pxsSR70JxmOlMU.png',
       capabilities: [
         {
           title: 'X-Ray Diffraction (XRD)',
@@ -85,7 +83,7 @@ export const Facilities: React.FC = () => {
       description:
         'An internationally recognized environmental monitoring suite equipped for high-throughput chemical, heavy metal, and radiochemical analysis of groundwater, mining tailings, industrial effluents, and biological matrices.',
       bg: 'bg-white',
-      gradient: 'from-teal-100 via-cyan-50 to-gray-200',
+      image: '/images/facilities/N1KSYnZEtZQn3abF6jSvGrIZOo.png',
       capabilities: [
         {
           title: 'AAS & ICP-MS Spectrometry',
@@ -130,38 +128,44 @@ export const Facilities: React.FC = () => {
           className={`${facility.bg} py-20 sm:py-24 border-b border-black/5`}
         >
           <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+
             <FadeIn>
-              {/* Large Aspect Ratio Image / Visual Illustration Placeholder */}
+              {/* Facility Image Banner */}
               <div
-                className={`aspect-[21/9] sm:aspect-[21/8] bg-gradient-to-br ${facility.gradient} border border-black/5 rounded-2xl overflow-hidden mb-10 sm:mb-12 shadow-card relative flex flex-col justify-between p-6 sm:p-10`}
+                className="aspect-[21/9] sm:aspect-[21/8] rounded-2xl overflow-hidden mb-10 sm:mb-12 shadow-card relative"
               >
-                <div className="flex items-center justify-between">
-                  <Badge variant="blue">{facility.tag}</Badge>
-                  <span className="font-ui text-xs font-semibold text-muted tracking-wider uppercase">
-                    Facility #{index + 1}
-                  </span>
-                </div>
-
-                <div className="my-auto text-center py-4">
-                  <div className="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center mx-auto mb-3 border border-black/5 text-cerd-blue">
-                    {index === 0 ? <Atom size={32} /> : index === 1 ? <Building2 size={32} /> : <TestTube2 size={32} />}
+                <img
+                  src={facility.image}
+                  alt={facility.name}
+                  className="w-full h-full object-cover"
+                />
+                {/* Overlay with badge and label */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20 flex flex-col justify-between p-6 sm:p-10">
+                  <div className="flex items-center justify-between">
+                    <Badge variant="blue">{facility.tag}</Badge>
+                    <span className="font-ui text-xs font-semibold text-white/70 tracking-wider uppercase">
+                      Facility #{index + 1}
+                    </span>
                   </div>
-                  <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-dark font-medium">
-                    {facility.name}
-                  </h3>
-                  <p className="font-ui text-xs sm:text-sm text-muted uppercase tracking-wider mt-1">
-                    Centre for Energy Research & Development • OAU Ile-Ife
-                  </p>
-                </div>
 
-                <div className="flex items-center justify-between pt-3 border-t border-black/5 font-ui text-xs text-muted">
-                  <span className="flex items-center gap-1.5 text-cerd-blue font-semibold">
-                    <CheckCircle2 size={14} /> Operational & Certified
-                  </span>
-                  <span>National Research Asset</span>
+                  <div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <CheckCircle2 size={14} className="text-cerd-cyan" />
+                      <span className="font-ui text-xs font-semibold text-white/80 uppercase tracking-wider">
+                        Operational &amp; Certified
+                      </span>
+                    </div>
+                    <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-white font-medium drop-shadow">
+                      {facility.name}
+                    </h3>
+                    <p className="font-ui text-xs sm:text-sm text-white/60 uppercase tracking-wider mt-1">
+                      Centre for Energy Research &amp; Development • OAU Ile-Ife
+                    </p>
+                  </div>
                 </div>
               </div>
             </FadeIn>
+
 
             {/* Facility Description */}
             <div className="max-w-4xl mb-12 sm:mb-14">

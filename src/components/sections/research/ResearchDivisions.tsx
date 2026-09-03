@@ -67,10 +67,6 @@ export const ResearchDivisions: React.FC = () => {
                         </h4>
                       </div>
 
-                      <div className="pt-3 border-t border-black/5 font-ui text-xs text-muted flex items-center justify-between">
-                        <span>Lead Coordinator:</span>
-                        <span className="text-dark font-medium">{division.lead.split('(')[0]}</span>
-                      </div>
                     </div>
                   </FadeIn>
                 </div>

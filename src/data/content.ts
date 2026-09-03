@@ -629,77 +629,56 @@ export interface PublicationsContent {
 
 export const PUBLICATIONS_CONTENT: PublicationsContent = {
   hero: {
-    badge: 'RESEARCH REPOSITORY',
-    heading: 'Scientific Publications & Technical Dispatches',
+    badge: 'KNOWLEDGE HUB',
+    heading: 'Scientific Publication',
     subheading:
-      'Over 2,000 peer-reviewed articles published in leading international nuclear, energy, material science, and environmental journals.',
+      'Access our extensive library of research papers, technical reports, and conference proceedings driving innovation in energy science.',
   },
   publications: [
     {
-      title:
-        'Ion Beam Analysis of Atmospheric Aerosol Particulates in Southwestern Nigeria using PIXE and PIGE Spectrometry',
-      journal: 'Journal of Radioanalytical and Nuclear Chemistry',
-      authors: 'Olise, F. S., Owoade, O. K., Fasasi, M. K., & Ajao, J. A.',
+      title: 'Neutron Activation Analysis of Trace Elements in Nigeria Crude Oil',
+      journal: 'Journal of Radioanalytical and Nuclear chemistry',
+      authors: 'A.F. Oluwole, J.A. Adebayo, O.I. Asubiojo',
       year: '2024',
-      category: 'Nuclear Science',
+      category: 'Journal article',
       abstract:
-        'This study investigates ambient PM2.5 and PM10 aerosol concentrations collected over an annual cycle across industrial and urban receptor sites. Using the 1.7 MV Tandem accelerator at CERD, Proton-Induced X-ray Emission (PIXE) and Proton-Induced Gamma-ray Emission (PIGE) revealed distinctive anthropogenic source profiles for lead, sulfur, and heavy crustal elements.',
-      doi: '10.1007/s10967-024-09412-1',
+        'This study utilizes the Miniature Neutron Source Reactor (MNSR) to analyze trace element concentrations in crude oil samples from the Niger Delta region.',
     },
     {
-      title:
-        'Assessment of Baseline Natural Radioactivity and Heavy Metal Contamination in Agricultural Soils and Groundwater Around Osun State',
+      title: 'Simulation of Electron Beam interactions with composite polymer',
+      journal: 'Material Science and Engineering: B',
+      authors: 'B.O. Solomon, K.M. Fasasi',
+      year: '2023',
+      category: 'Conference paper',
+      abstract:
+        'We present a Monte Carlo simulation of electron beam irradiation effects on high-density polyethylene composites, focusing on cross-linking efficiency.',
+    },
+    {
+      title: 'Environmental Impact Assessment of Artisanal Mining in Osun State',
       journal: 'Environmental Monitoring and Assessment',
-      authors: 'Adeleke, B. T., Fasunwon, A. S., & Olowookere, J. O.',
+      authors: 'C.E. Mokobia, A.M. Arogunjb',
       year: '2023',
-      category: 'Environmental Science',
+      category: 'Report',
       abstract:
-        'Activity concentrations of Ra-226, Th-232, and K-40 were measured across major cocoa and grain farming basins using high-resolution gamma-ray spectrometry. The calculated radium equivalent activities and hazard indices remained within international safety limits, establishing an indispensable reference baseline for regional radiological surveillance.',
-      doi: '10.1007/s10661-023-11280-4',
+        'A comprehensive assessment of heavy metal contamination in soil and water sources surrounding artisanal gold mining sites using EDXRF spectroscopy.',
     },
     {
-      title:
-        'Synthesis and Optical Characterization of Radiation-Resistant TiO2/WO3 Nanocomposite Thin Films for Nuclear Shielding Applications',
-      journal: 'Radiation Physics and Chemistry',
-      authors: 'Alao, O. E., Osinkolu, G. A., & Eleruja, M. A.',
-      year: '2023',
-      category: 'Material Science',
-      abstract:
-        'Nanostructured TiO2/WO3 composite thin films were deposited on quartz substrates via RF magnetron sputtering and subjected to high-dose gamma irradiation. Structural XRD analysis and spectrophotometry demonstrated remarkable structural stability, negligible bandgap shifting, and enhanced attenuation factors suitable for optoelectronic protective windows in radiation environments.',
-      doi: '10.1016/j.radphyschem.2023.110945',
-    },
-    {
-      title:
-        'Performance Evaluation of a Pilot Hybrid Photovoltaic-Thermal (PV/T) Solar System under Sub-Saharan Tropical Conditions',
+      title: 'Optimization of Solar Photovoltaic Systems for Rural Electrification',
       journal: 'Renewable Energy',
-      authors: 'Ogundele, K. M., Ojo, A. O., & Adediran, T. A.',
+      authors: 'D.K. Adewole, F.A. Akindele',
       year: '2022',
-      category: 'Energy Management',
+      category: 'Journal Article',
       abstract:
-        'A comprehensive experimental investigation of an actively cooled PV/T collector operated under tropical irradiance at OAU Ile-Ife. The integration of dual-fluid heat extraction yielded an electrical efficiency enhancement of 14.8% alongside a combined thermal-electrical total efficiency exceeding 68.2%.',
-      doi: '10.1016/j.renene.2022.06.088',
+        'This paper proposes an optimized sizing algorithm for standalone PV-battery systems tailored to the load profiles of rural communities in southwest Nigeria.',
     },
     {
-      title:
-        'Neutron Activation Analysis (NAA) Determination of Trace Elemental Signatures in Nigerian Geological Mineral Deposits',
-      journal: 'Applied Radiation and Isotopes',
-      authors: 'Balogun, H. A., Fasunwon, O. O., & Olise, F. S.',
-      year: '2024',
-      category: 'Nuclear Science',
+      title: 'Radiation Shielding Properties of Locally Sourced Concrete Aggregates',
+      journal: 'Nuclear Engineering and Design',
+      authors: 'G.A. Osinkolu, I.O. Oladipo',
+      year: '2022',
+      category: 'Journal Article',
       abstract:
-        'Multi-elemental instrumental neutron activation analysis was applied to quantify rare earth elements (REEs), tantalum, and niobium in pegmatite ore specimens. Precision evaluations confirmed sub-ppm detection limits, providing critical geochemical signatures for national mineral exploration.',
-      doi: '10.1016/j.apradiso.2024.111204',
-    },
-    {
-      title:
-        'Radiation Biophysics and Cell Death Kinetics Following Controlled Gamma Dosimetry Protocols',
-      journal: 'Radiation and Environmental Biophysics',
-      authors: 'Fasunwon, A. S., Adeleke, B. T., & Ajao, J. A.',
-      year: '2023',
-      category: 'Biophysics',
-      abstract:
-        'Investigating the kinetics of iron-dependent lipid peroxidation (ferroptosis) and apoptotic cell death pathways under fractional radiation doses. The experimental findings provide mathematical models for cellular radiation response curves applicable in clinical radiotherapy calibration.',
-      doi: '10.1007/s00411-023-01032-9',
+        'Investigation into the linear attenuation coefficients of concrete mixes containing baryte and magnetite aggregates for use in shielding low-energy gamma rays.',
     },
   ],
 };
