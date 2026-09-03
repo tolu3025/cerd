@@ -94,12 +94,14 @@ export interface HomeImpactPillar {
   number: string;
   title: string;
   description: string;
+  image: string;
 }
 
 export interface HomeResearchFrontier {
   title: string;
   category: string;
   description: string;
+  image: string;
 }
 
 export interface HomeNewsItem {
@@ -109,6 +111,7 @@ export interface HomeNewsItem {
   title: string;
   summary: string;
   href: string;
+  image: string;
 }
 
 export interface HomeMasterclass {
@@ -121,18 +124,20 @@ export interface HomeContent {
   hero: {
     badge: string;
     heading: string;
-    headingItalic: string;
+    headingBlue: string;
+    headingSuffix: string;
     subheading: string;
     primaryCta: { label: string; href: string };
-    secondaryCta: { label: string; href: string };
+    carouselImages: { src: string; alt: string }[];
+    ticker: string[];
   };
   overview: {
     badge: string;
-    heading: string;
-    paragraph1: string;
-    paragraph2: string;
+    paragraph: string;
     actionLabel: string;
     actionHref: string;
+    image1: string;
+    image2: string;
   };
   stats: HomeStat[];
   divisions: HomeDivision[];
@@ -144,52 +149,66 @@ export interface HomeContent {
 
 export const HOME_CONTENT: HomeContent = {
   hero: {
-    badge: 'Curiosity',
-    heading: "Advancing Nigeria's",
-    headingItalic: 'Energy Future',
+    badge: 'Curiousity',
+    heading: "Advancing Nigeria's ",
+    headingBlue: 'Energy ',
+    headingSuffix: 'Future',
     subheading:
-      'Pioneering nuclear spectroscopy and molecular analysis for a sustainable future.',
+      'Pioneering nuclear spectroscopy and molecular analysis for a sustainable future',
     primaryCta: { label: 'Explore Lab', href: '/facilities' },
-    secondaryCta: { label: 'WHO WE ARE', href: '/about' },
+    carouselImages: [
+      {
+        src: 'https://framerusercontent.com/images/rjZUEodEtg6vt0pxUMUKscFZwbk.png?width=1080&height=738',
+        alt: 'CERD Research Lab',
+      },
+      {
+        src: 'https://framerusercontent.com/images/KSu7tAymvEl3lWV8ndVMAO88lQ.png?width=3072&height=2048',
+        alt: 'CERD Laboratory Facility',
+      },
+      {
+        src: 'https://framerusercontent.com/images/QkP6nGjr0BctjWMUBosPXFjB9C8.jpeg?width=2400&height=1350',
+        alt: 'CERD Campus',
+      },
+    ],
+    ticker: [
+      'NUCLEAR TECHNOLOGY',
+      'MASTERCLASS',
+      'RENEWABLE ENERGY',
+      'PROTOTYPE',
+      'ENVIRONMENTAL IMPACT',
+      'ASSESSMENT',
+      'ADVANCED MATERIAL',
+      'TESTING',
+    ],
   },
   overview: {
     badge: 'WHO WE ARE',
-    heading: 'Pioneering Nuclear Science & Renewable Energy Solutions',
-    paragraph1:
-      'The Centre for Energy Research and Development (CERD) is a premier hub for cutting-edge research, training, and innovation. Since 1978, we have pioneered solutions in nuclear science, renewable energy, and materials engineering to address critical national and global challenges.',
-    paragraph2:
-      'Affiliated with the International Atomic Energy Agency (IAEA) and located at Obafemi Awolowo University (OAU), Ile-Ife, our laboratories house West Africa’s primary 1.7 MV Tandem Particle Accelerator and advanced spectrometry facilities.',
+    paragraph:
+      'The Centre for Energy Research and Development (CERD) is a premier hub for cutting-edge research, training, and innovation. Since 1978, we have pioneered solutions in nuclear science, renewable energy, and materials engineering to address critical national and global challenges',
     actionLabel: 'Our History',
-    actionHref: '/about#history',
+    actionHref: '/about-us',
+    image1:
+      'https://framerusercontent.com/images/Er40ItEQSaFwQk2Ncratieiro.png?width=1552&height=1013',
+    image2:
+      'https://framerusercontent.com/images/fyMq20t3AlKKhrpl4tFEyiTD4U.png?width=1024&height=1536',
   },
   stats: [
     {
-      value: '48+',
-      label: 'Years of Excellence',
-      subtext: 'Operating continuously since establishment in 1978',
-    },
-    {
       value: '2,000+',
-      label: 'Research Publications',
+      label: 'Research paper',
       subtext: 'Peer-reviewed research papers and technical scientific reports',
     },
     {
-      value: '70+',
-      label: 'Global Partners',
-      subtext: 'Collaborating with IAEA and leading international institutions',
-    },
-    {
-      value: '#1',
-      label: 'Nuclear Research Centre',
-      subtext: 'Leading energy and nuclear research centre in West Africa',
+      value: '48+',
+      label: 'Years of excellence',
+      subtext: 'Operating continuously since establishment in 1978',
     },
   ],
   divisions: [
     {
       number: '01',
-      name: 'Nuclear Science & Technology',
-      summary:
-        'Pioneering peaceful nuclear application and reactor engineering.',
+      name: 'Nuclear Science & Tech',
+      summary: 'Pioneering peaceful nuclear application and reactor engineering',
       capabilities: [
         'Reactor physics',
         'Neutron activation analysis (NAA)',
@@ -201,8 +220,7 @@ export const HOME_CONTENT: HomeContent = {
     {
       number: '02',
       name: 'Materials & Electronics',
-      summary:
-        'Developing next-generation materials & electronic components.',
+      summary: 'Developing next-gen materials & electric  components.',
       capabilities: [
         'Nanomaterials',
         'Polymer composites',
@@ -214,8 +232,7 @@ export const HOME_CONTENT: HomeContent = {
     {
       number: '03',
       name: 'Energy Management',
-      summary:
-        'Advancing clean energy solutions and atmospheric research.',
+      summary: 'Advancing clean energy solution and atmospheric research',
       capabilities: [
         'Solar photovoltaic & thermal systems',
         'Biomass conversion',
@@ -227,8 +244,7 @@ export const HOME_CONTENT: HomeContent = {
     {
       number: '04',
       name: 'Environmental Science',
-      summary:
-        'Safeguarding natural resources and monitoring climate dynamics.',
+      summary: 'Safeguarding natural resources and monitoring climate dynamics',
       capabilities: [
         'Pollution assessment',
         'Heavy metal monitoring',
@@ -241,106 +257,128 @@ export const HOME_CONTENT: HomeContent = {
   impactPillars: [
     {
       number: '01',
-      title: 'Innovation & Discovery Science',
+      title: 'Innovation',
       description:
         'We strengthen national capacity through discovery science enabled by multidisciplinary teams and powerful research tools, translating advancements to address critical priorities.',
+      image:
+        'https://framerusercontent.com/images/BkqJTZP49I4QpeiyFZExJTkJk.png?width=1537&height=1023',
     },
     {
       number: '02',
-      title: 'Energy Security',
+      title: 'Energy',
       description:
         'We advance technologies to ensure secure, affordable, and reliable energy to fuel economic growth. Our teams develop solutions across the full energy landscape.',
+      image:
+        'https://framerusercontent.com/images/REVTm6htsELyPjJCk9XfO1wEs.png?width=1536&height=1024',
     },
     {
       number: '03',
-      title: 'Industrial Competitiveness',
+      title: 'Competitiveness',
       description:
         'Fostering industrial growth through high-tech material science and manufacturing innovations that give our partners a distinct global advantage.',
+      image:
+        'https://framerusercontent.com/images/663Fpzu6rqbn2BfHXnrDFvl3JA.jpg?width=720&height=404',
     },
     {
       number: '04',
-      title: 'National Security & Infrastructure Resilience',
+      title: 'Security',
       description:
         'Enhancing national and reliable infrastructure security through radiation monitoring, advanced sensing, and resilient system design.',
+      image:
+        'https://framerusercontent.com/images/j23aKLX2kuxiIezL1Yclzjeqj6U.png?width=1536&height=1024',
     },
   ],
   researchFrontiers: [
     {
       title: 'Cell Death Kinetics',
-      category: 'Biophysics',
+      category: 'RESEARCH FRONTIER',
       description:
-        'Investigating the fundamental mechanisms of cellular decay to improve energy systems in biological contexts and radiation dosimetry.',
+        'investigating the fundamental mechanisms of cellular decay  to improve energy systems in biological context.',
+      image:
+        'https://framerusercontent.com/images/CeXsWCsiDQzYEPtR8nRsD3I8Hy0.png?width=1254&height=1254',
     },
     {
       title: 'Ferroptosis Analysis',
-      category: 'Molecular Analysis',
+      category: 'RESEARCH FRONTIER',
       description:
-        'Cutting-edge analysis of iron-dependent cell death pathways and their implications for medical energy application and nanoparticles.',
+        'Cutting-edge analysis of iron-dependent cell death pathways and their implications for medical energy application',
+      image:
+        'https://framerusercontent.com/images/og7ax1SB51Ogv977HSx8T4Gho.jpg?width=735&height=490',
     },
     {
       title: 'Bio-Energy Systems',
-      category: 'Renewable Innovation',
+      category: 'RESEARCH FRONTIER',
       description:
-        'Harnessing biological markers, microbial conversion, and organic biomass residues for sustainable renewable energy generation.',
+        'Harnessing biological markers and processes for sustainable renewable energy generation',
+      image:
+        'https://framerusercontent.com/images/O0ZuzUJGMtqHoalaySYHW7O0igk.png?width=1536&height=1024',
     },
     {
       title: 'Material Science',
-      category: 'Nanotechnology',
+      category: 'RESEARCH FRONTIER',
       description:
-        'Developing novel materials with superior thermal and radiation resistance for next-generation reactors and solar devices.',
+        'Developing novel materials with superior thermal and radiation resistance for next-gen reactors.',
+      image:
+        'https://framerusercontent.com/images/qMTwnHOvzZewCQJu2dSOEagxj8s.png?width=1536&height=1024',
     },
   ],
   news: [
     {
       type: 'event',
-      badge: 'Symposium',
+      badge: 'Event',
       date: 'May 18, 2026',
       title: 'CERD Organizes 50th Anniversary of Nuclear Science in Nigeria',
       summary:
-        'CERD hosts a national symposium commemorating 50 years of peaceful nuclear science and technological research achievements in Nigeria.',
+        'CERD host a national symposium commemorating 50 years of peaceful nuclear of science and technological research achievement in Nigeria.',
       href: '/news/50th-anniversary-nuclear-science',
+      image:
+        'https://framerusercontent.com/images/ILa9NdPyVozIvcteVlNAP1sPFzI.jpeg?width=1470&height=980',
     },
     {
       type: 'obituary',
-      badge: 'In Memoriam',
+      badge: 'Obituary',
       date: 'May 10, 2026',
-      title: 'CERD Mourns the Transition of Two Nuclear Scientists',
+      title: 'CERD Mourns the transition of Two Forecast Nuclear  Scientist',
       summary:
-        'The management and staff of CERD mourn the passing of two pioneer nuclear scientists who laid the foundation for energy research in Nigeria.',
+        'The management and staff of CERD mourn the passing of two pioneer nuclear scientists who laid the foundation for energy research in Nigeria',
       href: '/news/transition-pioneer-nuclear-scientists',
+      image:
+        'https://framerusercontent.com/images/XtZWdLIRgvd7bKFftKp1gEKPSqE.png?width=1536&height=1024',
     },
     {
       type: 'infrastructure',
-      badge: 'Facility Upgrade',
+      badge: 'Infrastructure',
       date: 'April 18, 2026',
       title: 'CERD Research and Service Wear New Look',
       summary:
         'The Research and Service building has been completely renovated and upgraded with modern laboratories, offices, and smart seminar halls.',
       href: '/news/research-service-building-renovation',
+      image:
+        'https://framerusercontent.com/images/jy9yG3PyRCsDOb2Dx45CUSZ93tg.png?width=1672&height=941',
     },
   ],
   masterclasses: [
     {
-      title: 'Nuclear Technology Masterclass',
-      category: 'Masterclass',
+      title: 'Nuclear Technology\nMasterclass',
+      category: 'NUCLEAR TECHNOLOGY',
       summary:
         'Intensive hands-on professional certification in gamma spectrometry, radiation protection dosimetry, and reactor physics.',
     },
     {
       title: 'Renewable Energy Prototype',
-      category: 'Prototype',
+      category: 'RENEWABLE ENERGY',
       summary:
         'Demonstration and bench testing of CERD-engineered hybrid photovoltaic-thermal (PV/T) solar collectors and modular gasification units.',
     },
     {
       title: 'Environmental Impact Assessment',
-      category: 'Accredited Service',
+      category: 'ENVIRONMENTAL IMPACT',
       summary:
         'Comprehensive radiological, chemical, and heavy-metal ecological audits tailored for industrial, mining, and infrastructural projects.',
     },
     {
       title: 'Advanced Material Testing',
-      category: 'Testing & Analysis',
+      category: 'ADVANCED MATERIAL',
       summary:
         'High-precision characterization of polymers, alloys, semiconductors, and ceramic barriers under extreme thermal and radiation stress.',
     },

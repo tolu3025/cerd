@@ -1,65 +1,57 @@
 import React from 'react';
-import { Lightbulb, Shield, Factory, Radio } from 'lucide-react';
 import { HOME_CONTENT } from '../../../data/content';
-import { SectionHeading } from '../../ui/SectionHeading';
-import { StaggerContainer, StaggerItem } from '../../shared/StaggerContainer';
 import { FadeIn } from '../../shared/FadeIn';
 
 export const ImpactPillarsSection: React.FC = () => {
   const { impactPillars } = HOME_CONTENT;
 
-  const getPillarIcon = (number: string) => {
-    switch (number) {
-      case '01':
-        return <Lightbulb size={24} className="text-cerd-blue" />;
-      case '02':
-        return <Shield size={24} className="text-cerd-blue" />;
-      case '03':
-        return <Factory size={24} className="text-cerd-blue" />;
-      case '04':
-        return <Radio size={24} className="text-cerd-blue" />;
-      default:
-        return <Lightbulb size={24} className="text-cerd-blue" />;
-    }
-  };
-
   return (
-    <section className="bg-white py-20 sm:py-24 border-b border-black/5">
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn>
-          <SectionHeading
-            badge="CORE IMPACT PILLARS"
-            title="Leading The Way"
-            subtitle="We translate high-energy physics, spectroscopy, and materials science into tangible energy resilience for industry and society."
-          />
+    <section className="bg-white py-16 sm:py-24 border-t border-black/5">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        <FadeIn className="mb-12">
+          {/* Badge */}
+          <div className="inline-flex items-center border border-[#0a0a0a] rounded-[8px] px-3 py-1.5 mb-6 font-sans text-xs tracking-widest uppercase w-fit">
+            CORE IMPACT PILLARS
+          </div>
+          
+          <h2 className="font-display font-semibold text-3xl sm:text-4xl lg:text-5xl text-[#0a0a0a] leading-[1.1] tracking-[-0.05em] max-w-xl">
+            Leading The Way
+          </h2>
         </FadeIn>
 
-        <StaggerContainer stagger={0.12} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* 4 Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {impactPillars.map((pillar) => (
-            <StaggerItem key={pillar.number}>
-              <div className="h-full flex flex-col justify-between p-6 sm:p-7 rounded-2xl border border-black/5 bg-surface hover:shadow-card transition-shadow">
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-cerd-blue/10 flex items-center justify-center">
-                      {getPillarIcon(pillar.number)}
-                    </div>
-                    <span className="font-display text-xs font-bold text-muted">
-                      PILLAR {pillar.number}
-                    </span>
-                  </div>
+            <FadeIn key={pillar.number} delay={0.1 * parseInt(pillar.number, 10)}>
+              <div className="flex flex-col rounded-2xl overflow-hidden bg-[#f7f7f7] border border-black/5 h-full group hover:shadow-lg transition-all duration-300">
+                {/* Image */}
+                <div className="h-48 w-full overflow-hidden bg-gray-200">
+                  <img
+                    src={pillar.image}
+                    alt={pillar.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
 
-                  <h3 className="font-sans font-semibold text-lg text-dark mb-3">
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-1">
+                  <span className="font-sans text-xs text-[#0a0a0a]/50 font-medium mb-2 uppercase tracking-wider">
+                    {pillar.number}
+                  </span>
+
+                  <h3 className="font-display font-semibold text-xl text-[#0a0a0a] mb-3">
                     {pillar.title}
                   </h3>
 
-                  <p className="font-sans text-sm text-body leading-relaxed">
+                  <p className="font-sans text-xs sm:text-sm text-[#0a0a0a]/70 leading-relaxed">
                     {pillar.description}
                   </p>
                 </div>
               </div>
-            </StaggerItem>
+            </FadeIn>
           ))}
-        </StaggerContainer>
+        </div>
       </div>
     </section>
   );

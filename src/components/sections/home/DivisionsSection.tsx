@@ -1,53 +1,50 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check } from 'lucide-react';
 import { HOME_CONTENT } from '../../../data/content';
-import { SectionHeading } from '../../ui/SectionHeading';
-import { GlassCard } from '../../ui/GlassCard';
-import { StaggerContainer, StaggerItem } from '../../shared/StaggerContainer';
 import { FadeIn } from '../../shared/FadeIn';
 
 export const DivisionsSection: React.FC = () => {
   const { divisions } = HOME_CONTENT;
 
   return (
-    <section id="divisions" className="bg-canvas py-20 sm:py-24 border-b border-black/5">
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn>
-          <SectionHeading
-            badge="CORE COMPETENCE"
-            title="Scientific Excellence Across 4 Divisions"
-            subtitle="Our research is structured to address complex challenges through specialized expertise and interdisciplinary collaboration."
-            align="center"
-          />
+    <section id="divisions" className="bg-[#0a0a0a] text-white py-20 sm:py-28">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        <FadeIn className="mb-16">
+          <div className="inline-flex items-center border border-white/30 rounded-[8px] px-3 py-1.5 mb-6 font-sans text-xs tracking-widest uppercase w-fit text-white/80">
+            OUR DIVISIONS
+          </div>
+          <h2 className="font-display font-semibold text-3xl sm:text-4xl lg:text-5xl text-white leading-[1.1] tracking-[-0.05em] max-w-2xl">
+            Divisions Shaping Energy Research & Innovation
+          </h2>
         </FadeIn>
 
-        <StaggerContainer stagger={0.12} className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-          {divisions.map((division) => (
-            <StaggerItem key={division.number}>
-              <GlassCard hover className="h-full flex flex-col justify-between p-8">
+        {/* 4 Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {divisions.map((div, idx) => (
+            <FadeIn key={div.number} delay={idx * 0.1}>
+              <div className="bg-[#141414] border border-white/10 rounded-2xl p-8 sm:p-10 flex flex-col justify-between h-full hover:border-white/20 transition-all duration-300">
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="font-display text-sm font-bold text-cerd-blue">
-                      DIVISION {division.number}
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="font-display font-semibold text-[#6f8bff] text-sm tracking-wider">
+                      DIVISION {div.number}
                     </span>
                   </div>
 
-                  <h3 className="font-sans font-semibold text-xl text-dark mb-3">
-                    {division.name}
+                  <h3 className="font-display font-semibold text-2xl sm:text-3xl text-white mb-4">
+                    {div.name}
                   </h3>
 
-                  <p className="font-sans text-sm text-body leading-relaxed mb-6">
-                    {division.summary}
+                  <p className="font-sans text-white/70 text-sm sm:text-base leading-relaxed mb-8">
+                    {div.summary}
                   </p>
 
-                  <div className="space-y-2 mb-8 pt-4 border-t border-black/5">
-                    <span className="font-ui text-xs font-semibold text-muted uppercase tracking-wider block mb-2">
-                      Key Capabilities:
+                  <div className="space-y-2.5 mb-10 pt-6 border-t border-white/10">
+                    <span className="font-sans text-xs font-semibold text-white/40 uppercase tracking-widest block mb-3">
+                      Capabilities:
                     </span>
-                    {division.capabilities.map((cap, cIdx) => (
-                      <div key={cIdx} className="flex items-center gap-2.5 font-ui text-sm text-body">
-                        <Check size={14} className="text-cerd-blue flex-shrink-0" />
+                    {div.capabilities.map((cap, cIdx) => (
+                      <div key={cIdx} className="flex items-center gap-3 font-sans text-sm text-white/80">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#6f8bff]" />
                         <span>{cap}</span>
                       </div>
                     ))}
@@ -56,17 +53,17 @@ export const DivisionsSection: React.FC = () => {
 
                 <div>
                   <Link
-                    to={division.href}
-                    className="inline-flex items-center gap-2 text-cerd-blue font-ui text-sm font-semibold uppercase tracking-wider hover:text-cerd-blue-dark group transition-colors"
+                    to={div.href}
+                    className="inline-flex items-center gap-2 text-white font-sans text-sm font-medium hover:text-[#6f8bff] transition-colors"
                   >
-                    <span>LEARN MORE</span>
-                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    <span>Learn More</span>
+                    <span className="text-base">→</span>
                   </Link>
                 </div>
-              </GlassCard>
-            </StaggerItem>
+              </div>
+            </FadeIn>
           ))}
-        </StaggerContainer>
+        </div>
       </div>
     </section>
   );
