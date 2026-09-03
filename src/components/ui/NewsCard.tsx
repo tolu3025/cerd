@@ -9,6 +9,8 @@ export interface NewsCardProps {
   category: string;
   summary: string;
   image?: string;
+  imagePosition?: string;
+  imageScale?: string;
   href?: string;
   className?: string;
   categoryClassName?: string;
@@ -20,6 +22,8 @@ export const NewsCard: React.FC<NewsCardProps> = ({
   category,
   summary,
   image,
+  imagePosition = 'object-center',
+  imageScale = 'scale-100',
   href = '#',
   className,
   categoryClassName,
@@ -60,7 +64,11 @@ export const NewsCard: React.FC<NewsCardProps> = ({
             <img
               src={image}
               alt={title}
-              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              className={cn(
+                'w-full h-full object-cover transition-transform duration-300 hover:scale-105',
+                imagePosition,
+                imageScale
+              )}
               loading="lazy"
             />
           ) : (

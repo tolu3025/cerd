@@ -326,13 +326,12 @@ export const HOME_CONTENT: HomeContent = {
     {
       type: 'event',
       badge: 'Event',
-      date: 'May 18, 2026',
-      title: 'CERD Organizes 50th Anniversary of Nuclear Science in Nigeria',
+      date: 'November 10-12, 2026',
+      title: 'CERD organises 50th Anniversary of Nuclear Science and Technological Education in Nigeria',
       summary:
         'CERD host a national symposium commemorating 50 years of peaceful nuclear of science and technological research achievement in Nigeria.',
       href: '/news/50th-anniversary-nuclear-science',
-      image:
-        'https://framerusercontent.com/images/ILa9NdPyVozIvcteVlNAP1sPFzI.jpeg?width=1470&height=980',
+      image: '/images/news/50th-anniversary-flyer.png',
     },
     {
       type: 'obituary',
@@ -864,13 +863,13 @@ export const NEWS_CONTENT: NewsContent = {
   articles: [
     {
       id: '50th-anniversary-nuclear-science',
-      title: 'CERD Organizes 50th Anniversary of Nuclear Science in Nigeria',
-      date: 'May 18, 2026',
+      title: 'CERD organises 50th Anniversary of Nuclear Science and Technological Education in Nigeria',
+      date: 'November 10-12, 2026',
       category: 'Symposium',
       summary:
         'CERD hosts a national symposium commemorating 50 years of peaceful nuclear science and technological research achievements in Nigeria.',
       content:
-        'The Centre for Energy Research and Development (CERD) at Obafemi Awolowo University is proud to announce the International Golden Jubilee Symposium celebrating 50 Years of Nuclear Science and Energy Research in Nigeria.\n\nThe three-day landmark event brings together distinguished delegates from the International Atomic Energy Agency (IAEA), the Nigerian Nuclear Regulatory Authority (NNRA), leading university research centres, and energy policy makers. Keynote addresses will reflect on Nigeria’s peaceful atomic energy milestones and unveil the 2030–2050 Nuclear Technology Strategic Roadmap.',
+        'The Centre for Energy Research and Development (CERD) at Obafemi Awolowo University is proud to announce the International Golden Jubilee Symposium celebrating 50 Years of Nuclear Science and Energy Research in Nigeria.\n\nThe three-day landmark event brings together distinguished delegates from the International Atomic Energy Agency (IAEA), the Nigerian Nuclear Regulatory Authority (NNRA), leading university research centres, and energy policy makers. Keynote addresses will reflect on Nigeria's peaceful atomic energy milestones and unveil the 2030–2050 Nuclear Technology Strategic Roadmap.',
       location: 'CERD International Conference Hall, OAU Ile-Ife',
     },
     {

@@ -25,14 +25,16 @@ export const News: React.FC = () => {
     setArticles([
       {
         id: '50th-anniversary-nuclear-science',
-        title: 'CERD Organizes 50th Anniversary of Nuclear Science in Nigeria',
-        date: 'May 18, 2026',
+        title: 'CERD organises 50th Anniversary of Nuclear Science and Technological Education in Nigeria',
+        date: 'November 10-12, 2026',
         category: 'Event',
         categoryClass: 'bg-[#1a2bc3]/10 text-[#1a2bc3]',
         summary:
           'CERD host a national symposium commemorating 50 years of peaceful nuclear of science and technological research achievement in Nigeria.',
         href: '/news#50th-anniversary',
-        image: 'https://framerusercontent.com/images/ILa9NdPyVozIvcteVlNAP1sPFzI.jpeg?width=1470&height=980',
+        image: '/images/news/50th-anniversary-flyer.png',
+        imagePosition: 'object-top',
+        imageScale: 'scale-75',
       },
       {
         id: 'transition-pioneer-nuclear-scientists',
@@ -89,6 +91,8 @@ export const News: React.FC = () => {
                 summary={article.summary}
                 href={article.href || `/news#${article.id}`}
                 image={article.image}
+                imagePosition={article.imagePosition}
+                imageScale={article.imageScale}
                 className="h-full"
               />
             </StaggerItem>
