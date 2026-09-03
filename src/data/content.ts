@@ -409,6 +409,7 @@ export interface AboutContent {
     name: string;
     title: string;
     institution: string;
+    image: string;
   };
 }
 
@@ -481,6 +482,8 @@ export const ABOUT_CONTENT: AboutContent = {
     name: 'Prof. J. A. Ajao',
     title: 'Director',
     institution: 'Centre for Energy Research and Development, OAU Ile-Ife',
+    image:
+      'https://framerusercontent.com/images/AkFPG5KN7utP3pPMVa7tB5YE.jpeg?scale-down-to=2048&width=3381&height=4226',
   },
 };
 
