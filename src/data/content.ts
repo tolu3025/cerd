@@ -337,7 +337,7 @@ export const HOME_CONTENT: HomeContent = {
       type: 'obituary',
       badge: 'Obituary',
       date: 'May 10, 2026',
-      title: 'CERD Mourns the transition of Two Forecast Nuclear  Scientist',
+      title: 'CERD Mourns the transition of Two Pioneer Nuclear Scientists',
       summary:
         'The management and staff of CERD mourn the passing of two pioneer nuclear scientists who laid the foundation for energy research in Nigeria',
       href: '/news/transition-pioneer-nuclear-scientists',

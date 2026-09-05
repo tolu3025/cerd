@@ -9,6 +9,7 @@ import { News } from './pages/News';
 import { Staff } from './pages/Staff';
 import { Contact } from './pages/Contact';
 import { Admin } from './pages/Admin';
+import { NewsDetail } from './pages/NewsDetail';
 import { NotFound } from './pages/NotFound';
 
 export function App() {
@@ -52,6 +53,9 @@ export function App() {
 
             {/* Admin Portal for Blog Posting */}
             <Route path="/admin" element={<Admin />} />
+
+            {/* News Detail Page */}
+            <Route path="/news/:id" element={<NewsDetail />} />
 
             {/* 404 Fallback Route */}
             <Route path="*" element={<NotFound />} />
