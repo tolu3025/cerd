@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PageTransition } from '../components/shared/PageTransition';
 import { FadeIn } from '../components/shared/FadeIn';
-import type { NewsArticleItem } from '../data/content';
+
 import { Lock, Plus, Trash2, Edit3, Image, Calendar, Tag, CheckCircle2, ShieldAlert, Upload, X, Loader2 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 

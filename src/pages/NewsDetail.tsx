@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, MapPin, Tag } from 'lucide-react';
 import { PageTransition } from '../components/shared/PageTransition';
 import { FadeIn } from '../components/shared/FadeIn';
@@ -57,7 +57,7 @@ const getCategoryColor = (category: string) => {
 
 export const NewsDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
+
   const [article, setArticle] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);

@@ -48,7 +48,7 @@ export const News: React.FC = () => {
   const { hero } = NEWS_CONTENT;
 
   const [articles, setArticles] = React.useState<any[]>(STATIC_ARTICLES);
-  const [loading, setLoading] = React.useState(true);
+  const [_loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     let cancelled = false;
